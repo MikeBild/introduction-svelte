@@ -5,12 +5,10 @@
 - Basic knowledge of
   - JavaScript/TypeScript
   - NodeJS
-  - React
-- NodeJS LTS
-- Linux, OSX or Windows operation system
-- VS Code
+- [NodeJS LTS](https://nodejs.org/en/download/) | [Node Version Manager](https://nvm.sh)
+- [VS Code](https://code.visualstudio.com/download)
 - [VS Code Extention](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
-- Chrome and Developer Tools
+- [Chrome and Developer Tools](https://chrome.google.com/webstore/detail/svelte-devtools/ckolcbmkjpjmangdbmnkpjigpkddpogn)
 
 ## Svelte vs. SvelteKit
 
@@ -47,7 +45,6 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 - [Principles](docs-svelte/principles.md)
 - [Setup](docs-svelte/setup-cli.md)
 
-
 ### SvelteKit
 
 - [Why SvelteKit?](docs-sveltekit/intro.md)
@@ -69,10 +66,15 @@ Still not sure what to use? Maybe these scenarios will help you decide:
   - [GraphQL](docs-sveltekit/recipies-graphql.md)  
   - [Auth](docs-sveltekit/recipies-auth.md)
 
-## Examples
+## Svelte & SvelteKit Examples
 
 - [Svelte SPA](examples/spa/README.md)
 - [Svelte Components](examples/svelte-components/README.md)
 - [SvelteKit Server Side Rendering](examples/sveltekit-ssr/README.md)
 - [SvelteKit Static Website](examples/sveltekit-static-website/README.md)
 - [SvelteKit Components](examples/sveltekit-components/README.md)
+
+## GraphQL Server and AWS Intrastructure
+
+- [Apollo GraphQL Server](examples/graphql-server/packages/local-server/README.md)
+- [AWS-CDK AppSync + Lambdas](examples/graphql-server/packages/aws-infrastructure/README.md)

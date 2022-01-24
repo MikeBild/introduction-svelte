@@ -1,1 +1,1 @@
-# SvelteKit Static Website
+# A static website using SvelteKit
