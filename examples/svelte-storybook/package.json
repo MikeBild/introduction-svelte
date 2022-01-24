@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "@introduction-svelte/svelte-storybook",
+  "version": "1.0.0",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@storybook/addon-actions": "^6.5.0-alpha.23",
+    "@storybook/addon-essentials": "^6.5.0-alpha.23",
+    "@storybook/addon-links": "^6.5.0-alpha.23",
+    "@storybook/addon-svelte-csf": "^1.1.0",
+    "@storybook/svelte": "^6.5.0-alpha.23",
+    "babel-loader": "^8.2.3",
+    "svelte": "^3.46.2",
+    "svelte-loader": "^3.1.2",
+    "svelte-preprocess": "^4.10.2",
+    "@storybook/builder-webpack5": "^6.5.0-alpha.23",
+    "@storybook/manager-webpack5": "^6.5.0-alpha.23",
+    "@introduction-svelte/svelte-components": "link:../svelte-components/package"
+  },
+  "dependencies": {}
+}

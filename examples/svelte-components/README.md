@@ -1,1 +1,1 @@
-# Svelte Components
+# Svelte Component Library
