@@ -1,3 +1,5 @@
+<svelte:options tag="atomic-button" />
+
 <script lang="ts">
 	export let label = 'Click Me!';
 
@@ -5,7 +7,5 @@
 		alert('Hello Svelte!');
 	}
 </script>
-
-<svelte:options tag="atomic-button" />
 
 <button type="button" on:click={onClickHandler}>{label}</button>

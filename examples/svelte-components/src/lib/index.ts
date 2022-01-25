@@ -1,1 +1,3 @@
-export * from '$lib/atomics/Button.svelte';
+import Button from '$lib/atomics/Button.svelte';
+
+export { Button };

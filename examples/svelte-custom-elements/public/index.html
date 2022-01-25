@@ -4,6 +4,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Svelte Web-Components using Custom-Elements</title>
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="stylesheet" href="/global.css" />
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -32,9 +34,8 @@
 		</script>
 	</head>
 	<body>
-		<h1>Svelte based Web-Components using Custom-Elements</h1>
-		<p>An example page of Introduction into Svelte and SvelteKit</p>
-		<div>
+		<main>
+			<h1>Svelte custom HTML5 elements</h1>					
 			<h2>Atomics</h2>
 			<div>
 				<h3>Button</h3>
@@ -50,6 +51,41 @@
 			<div>...</div>
 			<h2>Organisms</h2>
 			<div>...</div>
-		</div>
+		</main>
+		<style>
+			main {
+				text-align: center;
+				padding: 1em;
+				max-width: 240px;
+				margin: 0 auto;
+			}
+
+			h1 {
+				color: #ff3e00;
+				text-transform: uppercase;
+				font-size: 4em;
+				font-weight: 100;
+			}
+
+			h2 {
+				color: #d4542a;
+				text-transform: uppercase;
+				font-size: 2em;
+				font-weight: 100;
+			}
+
+			h3 {
+				color: #0f0f0e;
+				text-transform: uppercase;
+				font-size: 1em;
+				font-weight: 100;
+			}
+
+			@media (min-width: 640px) {
+				main {
+					max-width: none;
+				}
+			}
+		</style>
 	</body>
 </html>
