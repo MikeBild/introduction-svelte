@@ -1,0 +1,1 @@
+# SvelteKit Service Worker
