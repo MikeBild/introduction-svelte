@@ -14,14 +14,22 @@
     <script>
       // Vanilla JS
       window.addEventListener("load", function () {
-        document.getElementById("atomics-button-container").innerHTML =
+        const atomicsCuttonContainer = document.getElementById(
+          "atomics-button-container"
+        );
+        atomicsCuttonContainer.innerHTML =
           '<atomic-button label="Button via Vanilla JS"></atomic-button>';
+        atomicsCuttonContainer.addEventListener("action", function (e) {
+          alert(e.detail.text);
+        });
       });
       // jQuery
       $(function () {
-        $("#atomics-button-container-jquery").html(
-          '<atomic-button label="Button via jQuery"></atomic-button>'
-        );
+        $("#atomics-button-container-jquery")
+          .on("action", function (e) {
+            alert(e.detail.text);
+          })
+          .html('<atomic-button label="Button via jQuery"></atomic-button>');
       });
     </script>
   </head>
