@@ -1,5 +1,3 @@
-<svelte:options tag="atomic-button" />
-
 <script lang="ts">
 	export let label = 'Click Me!';
 	import { createEventDispatcher } from 'svelte';

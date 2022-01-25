@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "@introduction-svelte/sveltekit-static-website",
+	"name": "@introduction-svelte/sveltekit-ssr",
 	"version": "1.0.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
@@ -12,7 +12,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "next",
+		"@sveltejs/adapter-node": "next",
 		"@sveltejs/kit": "next",
 		"prettier": "^2.4.1",
 		"prettier-plugin-svelte": "^2.4.0",
