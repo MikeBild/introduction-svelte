@@ -5,3 +5,4 @@
 - Extremely good docs and a cool interactive playground
 - Lightweight and easy to read
 - State automatically updates
+- Supports custom elements

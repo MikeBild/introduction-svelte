@@ -44,6 +44,9 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 - [Architecture](docs-svelte/architecture.md)
 - [Principles](docs-svelte/principles.md)
 - [Setup](docs-svelte/setup-cli.md)
+- [Recipies](docs-svelte/recipies.md)
+  - [Components](docs-svelte/recipies-components.md) 
+  - [Custom-Elements](docs-svelte/recipies-custom-elements.md) 
 
 ### SvelteKit
 
@@ -70,6 +73,8 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 
 - [Svelte SPA](examples/spa/README.md)
 - [Svelte Components](examples/svelte-components/README.md)
+- [Svelte Storybook](examples/svelte-storybook/README.md)
+- [Svelte Custom-Elements](examples/svelte-custom-elements/README.md)
 - [SvelteKit Server Side Rendering](examples/sveltekit-ssr/README.md)
 - [SvelteKit Static Website](examples/sveltekit-static-website/README.md)
 - [SvelteKit Components](examples/sveltekit-components/README.md)
@@ -78,3 +83,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 
 - [Apollo GraphQL Server](examples/graphql-server/packages/local-server/README.md)
 - [AWS-CDK AppSync + Lambdas](examples/graphql-server/packages/aws-infrastructure/README.md)
+
+## Atomic Design
+
+- Design System Principles by [Brad Frost](https://atomicdesign.bradfrost.com/)

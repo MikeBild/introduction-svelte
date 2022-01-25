@@ -4,23 +4,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Svelte Web-Components using Custom-Elements</title>
-    <script defer src="build/bundle.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="build/bundle.js"></script>
     <script>
+      // Vanilla JS
       window.addEventListener("load", function () {
         document.getElementById("atomics-button-container").innerHTML =
-          "<atomic-button></atomic-button>";
+          '<atomic-button label="Button via Vanilla JS"></atomic-button>';
+      });
+      // jQuery
+      $(function () {
+        $("#atomics-button-container-jquery").html(
+          '<atomic-button label="Button via jQuery"></atomic-button>'
+        );
       });
     </script>
   </head>
   <body>
-    <h1>Svelte Web-Components using Custom-Elements</h1>
+    <h1>Svelte based Web-Components using Custom-Elements</h1>
     <p>An example page of Introduction into Svelte and SvelteKit</p>
     <div>
       <h2>Atomics</h2>
       <div>
         <h3>Button</h3>
-        <atomic-button label="My Atomic Button"></atomic-button>
+        <atomic-button label="Button via Tag"></atomic-button>
         <div id="atomics-button-container"></div>
+        <div id="atomics-button-container-jquery"></div>
+      </div>
+      <div>
+        <h3>Clock</h3>
+        <atomic-clock></atomic-clock>
       </div>
       <h2>Molecules</h2>
       <div>...</div>
