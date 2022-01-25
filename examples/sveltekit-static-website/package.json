@@ -5,8 +5,7 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
+		"start": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
@@ -25,7 +24,8 @@
 	},
 	"dependencies": {
 		"graphql-request": "^3.7.0",
-		"graphql": "^16.2.0"
+		"graphql": "^16.2.0",
+		"@introduction-svelte/svelte-components": "link:../svelte-components/package"
 	},
 	"type": "module"
 }

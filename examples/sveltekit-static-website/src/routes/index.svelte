@@ -9,8 +9,7 @@
 </svelte:head>
 
 <h2>Home</h2>
-<ul>
-	<li><a href="/articles">Articles</a></li>
-	<li><a href="/components">Components</a></li>
-	<li><a href="/about">About</a></li>
-</ul>
+
+<a href="/components">Components</a> |
+<a href="/articles">Articles</a> |
+<a href="/about">About</a>
