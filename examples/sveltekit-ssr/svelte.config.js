@@ -1,10 +1,16 @@
 import adapter from '@sveltejs/adapter-node';
+import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
-	preprocess: preprocess(),
+	extensions: ['.svelte'],
+	preprocess: [preprocess(), mdsvex({extensions: ['.svelte.md']})],
 	kit: {
-		adapter: adapter(),		
+		target: '#svelte',
+		adapter: adapter(),
+		prerender: {
+			onError: 'continue'
+		}
 	}
 };

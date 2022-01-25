@@ -12,4 +12,5 @@
 
 <a href="/components">Components</a> |
 <a href="/articles">Articles</a> |
+<a href="/mdsvex">Markdown Svelte Extention</a> |
 <a href="/about">About</a>

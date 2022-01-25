@@ -25,6 +25,7 @@
 	"dependencies": {
 		"graphql-request": "^3.7.0",
 		"graphql": "^16.2.0",
+		"mdsvex": "^0.9.8",
 		"@introduction-svelte/svelte-components": "link:../svelte-components/package"
 	},
 	"type": "module"
