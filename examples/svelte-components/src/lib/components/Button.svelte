@@ -6,4 +6,6 @@
 	}
 </script>
 
+<svelte:options tag="atomic-button" />
+
 <button type="button" on:click={onClickHandler}>{label}</button>

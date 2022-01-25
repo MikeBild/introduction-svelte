@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svelte Web-Components using Custom-Elements</title>
+    <script defer src="build/bundle.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        document.getElementById("atomics-button-container").innerHTML =
+          "<atomic-button></atomic-button>";
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Svelte Web-Components using Custom-Elements</h1>
+    <p>An example page of Introduction into Svelte and SvelteKit</p>
+    <div>
+      <h2>Atomics</h2>
+      <div>
+        <h3>Button</h3>
+        <atomic-button label="My Atomic Button"></atomic-button>
+        <div id="atomics-button-container"></div>
+      </div>
+      <h2>Molecules</h2>
+      <div>...</div>
+      <h2>Organisms</h2>
+      <div>...</div>
+    </div>
+  </body>
+</html>
