@@ -1,7 +1,6 @@
-# SvelteKit Docker Hosting
-
-**Dockerfile**
-```Dockerfile
+###
+# ~> Use builder image ...
+###
 FROM mhart/alpine-node:14 as builder
 
 COPY svelte-components ./svelte-components
@@ -11,20 +10,9 @@ RUN yarn
 RUN yarn build
 
 ###
-# ~> Saves space!
+# ~> ... to save space!
 ###
 FROM mhart/alpine-node:slim-14
 COPY --from=builder /sveltekit-ssr/build /sveltekit-ssr/node_modules /sveltekit-ssr/package.json ./app
 EXPOSE 3000
 CMD ["node", "./app/index.js"]
-```
-
-**Build**
-```sh
-docker run -p 8080:3000 --platform linux/amd64 sveltekit-ssr
-```
-
-**Run**
-```sh
-docker build -t sveltekit-ssr .
-```
