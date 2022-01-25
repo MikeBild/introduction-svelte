@@ -8,11 +8,11 @@ yarn
 ## Development
 
 ```sh
-yarn storybook
+yarn dev
 ```
 
 ## Build
 
 ```sh
-yarn build-storybook
+yarn build
 ```
