@@ -39,6 +39,20 @@
 		font-weight: 100;
 	}
 
+	h2 {
+		color: #d4542a;
+		text-transform: uppercase;
+		font-size: 2em;
+		font-weight: 100;
+	}
+
+	h3 {
+		color: #0f0f0e;
+		text-transform: uppercase;
+		font-size: 1em;
+		font-weight: 100;
+	}
+	
 	@media (min-width: 640px) {
 		main {
 			max-width: none;

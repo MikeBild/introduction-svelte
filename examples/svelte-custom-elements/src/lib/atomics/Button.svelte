@@ -27,10 +27,10 @@
 	}
 </script>
 
-<button type="button" class="border" on:click={onClickHandler}>{label}</button>
+<button class="button" on:click={onClickHandler}>{label}</button>
 
 <style>
-	.border {
+	.button {
 		border: 1px solid black;
 	}
 </style>
