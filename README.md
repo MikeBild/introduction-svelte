@@ -46,7 +46,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 - [Setup](docs-svelte/setup-cli.md)
 - [Recipies](docs-svelte/recipies.md)
   - [Components](docs-svelte/recipies-components.md) 
-  - [Custom-Elements](docs-svelte/recipies-custom-elements.md) 
+  - [Custom-Elements](docs-svelte/recipies-custom-elements.md)
 
 ### SvelteKit
 
@@ -58,7 +58,8 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 - [Routing](docs-sveltekit/routing.md)
 - [Scripts and styles](docs-sveltekit/scripts-styles.md)
 - [Layout](docs-sveltekit/layout.md)
-- [Server Side](docs-sveltekit/server-side.md)
+- [Server Side Rendering](docs-sveltekit/server-side-rendering.md)
+- [API Endpoints](docs-sveltekit/api-endpoints.md)
 - [Adapters and Build-Process](docs-sveltekit/build.md)
   - [Environment](docs-sveltekit/build-environment.md) 
   - [Adapters](docs-sveltekit/build-adapters.md)
@@ -68,6 +69,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
   - [API](docs-sveltekit/recipies-api.md)
   - [GraphQL](docs-sveltekit/recipies-graphql.md)  
   - [Auth](docs-sveltekit/recipies-auth.md)
+  - [Service Workers](docs-sveltekit/recipies-service-worker.md)
 
 ## Svelte & SvelteKit Examples
 
