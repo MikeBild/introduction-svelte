@@ -1,3 +1,1 @@
-import Button from '$lib/components/Button.svelte';
-
-export { Button };
+export * from '$lib/atomics/Button.svelte';
