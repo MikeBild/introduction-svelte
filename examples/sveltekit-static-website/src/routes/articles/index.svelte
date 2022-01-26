@@ -19,7 +19,9 @@
 </script>
 
 <script>
+	import { goto } from '$app/navigation';
 	export let articles;
+	export let query;
 </script>
 
 <svelte:head>
@@ -28,9 +30,12 @@
 
 <div>
 	<h2>Articles</h2>
-	<ul>
-		{#each articles as article (article.id)}
-			<li><a href="/articles/{article.id}">{article.id}</a></li>
-		{/each}
-	</ul>
+	<div>
+		<input type="search" bind:value={query} /><button
+			on:click={() => goto(`/articles/search?query=${query}`)}>Search</button
+		>
+	</div>
+	{#each articles as article (article.id)}
+		<div><a href="/articles/{article.id}">{article.id}</a></div>
+	{/each}
 </div>

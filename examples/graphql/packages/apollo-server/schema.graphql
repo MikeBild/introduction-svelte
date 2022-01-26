@@ -7,7 +7,7 @@ type Query {
 	articles: [Article]
 	comments: [Comment]
 	article(id: ID!): Article
-	search: [Search]
+	search(query: String!): [Search]
 	posts: [Post]
 }
 

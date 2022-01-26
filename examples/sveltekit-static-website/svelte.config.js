@@ -5,7 +5,7 @@ import preprocess from 'svelte-preprocess';
 export default {
 	preprocess: preprocess(),
 	kit: {
-		router: false,
+		router: true,
 		hydrate: true,
 		appDir: 'app',
 		adapter: adapter({
