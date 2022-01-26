@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build": "tsc",
-		"deploy": "cdk deploy *Stack",
+		"deploy": "cdk deploy --require-approval never *Stack",
 		"destroy": "cdk destroy --force --all"
 	},
 	"devDependencies": {

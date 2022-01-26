@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build": "tsc",
-		"dev": "ts-node -e ts,graphql index",
+		"dev": "nodemon --watch src/** --watch *.graphql --ext ts,json --ignore --exec ts-node src/index.ts",
 		"start": "NODE_ENV=production node dist/index"
 	},
 	"dependencies": {
