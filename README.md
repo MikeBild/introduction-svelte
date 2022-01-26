@@ -67,6 +67,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
   - [Environment](docs-sveltekit/build-environment.md) 
   - [Adapters](docs-sveltekit/build-adapters.md)
 - [Recipies](docs-sveltekit/recipies.md)
+  - [Prefetching](docs-sveltekit/recipies-prefetching.md)
   - [Docker](docs-sveltekit/recipies-docker.md)
   - [Markdown Svelte Extention](docs-sveltekit/recipies-mdsvex.md)
   - [Components](docs-sveltekit/recipies-components.md) 
@@ -84,6 +85,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 - [Svelte Custom-Elements](examples/svelte-custom-elements/README.md)
 - [SvelteKit Server Side Rendering](examples/sveltekit-ssr/README.md)
 - [SvelteKit Static Website](examples/sveltekit-static-website/README.md)
+- [SvelteKit AWS Adapter](examples/sveltekit-aws/README.md)
 
 ## GraphQL Server and AWS Intrastructure
 
