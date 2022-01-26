@@ -1,1 +1,0 @@
-# GraphQL Mock Server using Apollo

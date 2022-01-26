@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "name": "@introduction-svelte/graphql",
+    "version": "1.0.0",
+    "scripts": {
+      "lerna": "lerna clean --yes && lerna bootstrap",
+      "dev": "lerna run dev --stream --parallel",
+      "build": "lerna run build --stream",
+      "start": "lerna run start --stream --parallel",
+      "deploy": "lerna run deploy --stream",
+      "destroy": "lerna run destroy --stream",
+      "clean": "lerna clean --yes"
+    },
+    "devDependencies": {
+      "lerna": "^4.0.0"
+    }
+  }
