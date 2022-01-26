@@ -67,7 +67,9 @@ button:focus {
 	border-color: #666;
 }
 
-header, main, footer {
+header,
+main,
+footer {
 	text-align: center;
 	padding: 1em;
 	max-width: 640px;

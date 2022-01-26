@@ -4,8 +4,8 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
-	extensions: ['.svelte'],
-	preprocess: [preprocess(), mdsvex({extensions: ['.svelte.md']})],
+	extensions: ['.svelte.md', '.svelte'],
+	preprocess: [preprocess(), mdsvex({ extensions: ['.svelte.md'] })],
 	kit: {
 		target: '#svelte',
 		adapter: adapter(),
