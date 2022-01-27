@@ -1,12 +1,13 @@
 <script lang="ts">
-	export let label = 'Click Me!';
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
+
+	export let label = 'Click Me!';
 
 	function onClickHandler() {
 		const detail = { text: 'Some data from a Svelte based Custom-Element!' };
 		dispatch('action', detail);
-
+		
 		alert('Hello from Svelte!');
 	}
 </script>

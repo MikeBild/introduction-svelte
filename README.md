@@ -47,6 +47,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 - [Recipies](docs-svelte/recipies.md)
   - [Components](docs-svelte/recipies-components.md) 
   - [Custom-Elements](docs-svelte/recipies-custom-elements.md)
+  - [Testing](docs-svelte/recipies-testing.md)
 
 ### SvelteKit
 
@@ -67,6 +68,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
   - [Environment](docs-sveltekit/build-environment.md) 
   - [Adapters](docs-sveltekit/build-adapters.md)
 - [Recipies](docs-sveltekit/recipies.md)
+  - [Testing](docs-sveltekit/recipies-testing.md)
   - [Prefetching](docs-sveltekit/recipies-prefetching.md)
   - [Docker](docs-sveltekit/recipies-docker.md)
   - [Markdown Svelte Extention](docs-sveltekit/recipies-mdsvex.md)
