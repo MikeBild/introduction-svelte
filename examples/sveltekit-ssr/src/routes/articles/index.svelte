@@ -28,9 +28,8 @@
 
 <div>
 	<h2>Articles</h2>
-	<ul>
-		{#each articles as article (article.id)}
-			<li><a href="/articles/{article.id}">{article.id}</a></li>
-		{/each}
-	</ul>
+
+	{#each articles as article (article.id)}
+		<div><a href="/articles/{article.id}">{article.id}</a></div>
+	{/each}
 </div>
