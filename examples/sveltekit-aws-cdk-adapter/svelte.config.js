@@ -7,7 +7,7 @@ export default {
   preprocess: mdsvex({ extension: '.svelte.md' }),
   kit: {
     adapter: adapter({
-      autoDeploy: false,
+      autoDeploy: true,
       cdkProjectPath: `${process.cwd()}/deploy.js`,      
     }),
     browser: {
