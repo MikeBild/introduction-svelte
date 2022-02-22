@@ -1,0 +1,1 @@
+# JAMStack Architecture
