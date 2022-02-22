@@ -1,7 +1,8 @@
-<script context="module">
+<script context="module" lang="ts">
+	import type { LoadInput } from '@sveltejs/kit';
 	import { request, gql } from 'graphql-request';
 
-	export const load = async ({ fetch }) => {
+	export const load = async ({ fetch }: LoadInput) => {
 		const { articles } = await request(
 			'http://localhost:8080/graphql',
 			gql`
