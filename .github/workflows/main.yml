@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: examples/sveltekit-adapter-aws
+        working-directory: ./examples/sveltekit-adapter-aws
     steps:
       - name: GitHub Checkout
         uses: actions/checkout@v1
