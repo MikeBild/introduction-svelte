@@ -1,2 +1,0 @@
-# The principles of SvelteKit
-

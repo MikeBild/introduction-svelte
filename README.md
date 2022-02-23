@@ -60,17 +60,14 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 - [Module Context](docs-svelte/module-context.md)
 - [Debugging](docs-svelte/debugging.md)
 - [Recipies](docs-svelte/recipies.md)
-  - [Components](docs-svelte/recipies-components.md) 
   - [Custom-Elements](docs-svelte/recipies-custom-elements.md)
   - [Testing](docs-svelte/recipies-testing.md)
 
 ### SvelteKit
 
 - [Why SvelteKit?](docs-sveltekit/intro.md)
-- [What is SvelteKit?](docs-sveltekit/sveltekit.md)
 - [JAMStack](docs-sveltekit/jamstack-architecture.md)
 - [SvelteKit Architecture](docs-sveltekit/architecture.md)
-- [Principles](docs-sveltekit/principles.md)
 - [Setup and CLI](docs-sveltekit/setup-cli.md)
 - [Routing](docs-sveltekit/routing.md)
 - [Scripts and Styles](docs-sveltekit/scripts-styles.md)
