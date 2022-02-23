@@ -6,19 +6,18 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./examples/sveltekit-adapter-aws
     steps:
       - name: GitHub Checkout
         uses: actions/checkout@v1
 
       - name: Yarn Install
+        working-directory: ./examples/sveltekit-adapter-aws
         uses: nuxt/actions-yarn@master
         with:
           args: install
 
       - name: Build and Deploy
+        working-directory: ./examples/sveltekit-adapter-aws
         uses: nuxt/actions-yarn@master
         with:
           args: build
