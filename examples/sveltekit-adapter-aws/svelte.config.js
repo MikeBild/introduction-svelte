@@ -8,7 +8,7 @@ export default {
   kit: {
     adapter: adapter({
       autoDeploy: true,
-      cdkProjectPath: `${process.cwd()}/deploy.js`,      
+      cdkProjectPath: `${process.cwd()}/deploy/index.js`,
     }),
     browser: {
       router: false,

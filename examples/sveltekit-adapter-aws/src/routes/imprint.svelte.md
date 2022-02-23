@@ -1,6 +1,6 @@
 ---
 title: Imprint
-section: "This is a demo page!"
+section: 'This is a demo page!'
 ---
 
 <script context="module">
@@ -9,4 +9,3 @@ section: "This is a demo page!"
 </script>
 
 # {title}
-

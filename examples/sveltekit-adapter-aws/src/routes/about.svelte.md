@@ -1,6 +1,6 @@
 ---
 title: About
-section: "This is a demo page!"
+section: 'This is a demo page!'
 ---
 
 <script context="module">

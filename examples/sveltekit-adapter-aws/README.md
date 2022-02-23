@@ -7,7 +7,7 @@
 ## SvelteKit options
 
 - client side routing is disabled
-- partial prerendered 
+- partial prerendered
 - partial SSR
 - partial JavaScript
 - JSON API endpoints
