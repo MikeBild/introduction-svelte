@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Echo        
-        run: echo abc '${{ secrets.AWS_ACCOUNT }}'
+        run: echo abc ${{ secrets.AWS_ACCOUNT }}
 
       - name: Yarn Install
         working-directory: ./examples/sveltekit-adapter-aws
@@ -22,7 +22,7 @@ jobs:
         working-directory: ./examples/sveltekit-adapter-aws
         run: yarn build
         env:          
-          AWS_ACCESS_KEY_ID: '${{ secrets.AWS_ACCESS_KEY_ID }}'
-          AWS_SECRET_ACCESS_KEY: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
-          CDK_DEFAULT_ACCOUNT: '${{ secrets.AWS_ACCOUNT }}'
-          CDK_DEFAULT_REGION: 'us-east-1'
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          CDK_DEFAULT_ACCOUNT: ${{ secrets.AWS_ACCOUNT }}
+          CDK_DEFAULT_REGION: us-east-1
