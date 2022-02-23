@@ -11,9 +11,6 @@ jobs:
       - name: GitHub Checkout
         uses: actions/checkout@v1
 
-      - name: Echo        
-        run: echo abc ${{ secrets.AWS_ACCOUNT }}
-
       - name: Yarn Install
         working-directory: ./examples/sveltekit-adapter-aws
         run: yarn
