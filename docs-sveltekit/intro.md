@@ -12,4 +12,5 @@
 - prefetching resources
 - offline support using Service Workers
 - lightning-fast and feature-rich development experience
+- SEO out of the box
 
