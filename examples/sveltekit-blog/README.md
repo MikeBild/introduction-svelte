@@ -1,6 +1,10 @@
 # SvelteKit Blog Example
 
-## MDSveX
+- [SvelteKit Blog Example](#sveltekit-blog-example)
+  - [Add MDSveX preprocessor](#add-mdsvex-preprocessor)
+  - [Add a static Article using MDSveX](#add-a-static-article-using-mdsvex)
+  - [Add a SEO component](#add-a-seo-component)
+## Add MDSveX preprocessor
 
 Svelte in Markdown [MDSveX docs](https://mdsvex.pngwn.io/docs)
 
@@ -18,3 +22,7 @@ export default {
 	preprocess: [mdsvex({ extension: '.svelte.md' }), sveltePreprocess()],
 }
 ```
+
+## Add a static Article using MDSveX
+
+## Add a SEO component
