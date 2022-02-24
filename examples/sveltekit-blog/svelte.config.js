@@ -1,5 +1,5 @@
-import { adapter } from 'sveltekit-adapter-aws';
 import sveltePreprocess from 'svelte-preprocess';
+import { adapter } from 'sveltekit-adapter-aws';
 import { mdsvex } from 'mdsvex';
 
 export default {
