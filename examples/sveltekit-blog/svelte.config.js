@@ -1,9 +1,11 @@
 import { adapter } from 'sveltekit-adapter-aws';
-import preprocess from 'svelte-preprocess';
+import sveltePreprocess from 'svelte-preprocess';
+import { mdsvex } from 'mdsvex';
 
 export default {
-	preprocess: preprocess(),
-	kit: {		
+	extensions: ['.svelte', '.svelte.md'],
+	preprocess: [mdsvex({ extension: '.svelte.md' }), sveltePreprocess()],
+	kit: {
 		adapter: adapter({
 			FQDN: 'sveltekit-blog.mikebild.com',
 			stackName: 'sveltekit-blog',

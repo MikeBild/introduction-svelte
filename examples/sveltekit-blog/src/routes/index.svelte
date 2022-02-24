@@ -1,15 +1,5 @@
 <svelte:head>
-	<title>SvelteKit Blog Example</title>
+	<title>SvelteKit Blog Example - Home</title>
 </svelte:head>
 
-<header>
-	<h1>Welcome to SvelteKit Blog Example</h1>
-</header>
-
-<nav>
-	<ul>		
-		<li><a href="/">Home</a></li>
-		<li><a href="/about">About</a></li>
-		<li><a href="/demo">Demo</a></li>
-	</ul>
-</nav>
+<h1>Home</h1>
