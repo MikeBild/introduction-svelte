@@ -17,7 +17,7 @@
 <h1>Blog Posts</h1>
 
 <ul>
-	{#each articles as article}
-		<li><a href={`/blog/${article.slug}`}>{article.title}</a></li>
+	{#each articles as { title, slug }}
+		<li><a href={`/blog/${slug}`}>{title}</a></li>
 	{/each}
 </ul>
