@@ -6,6 +6,7 @@
 - Faster page load and rendering time
 - Best performance in Bundle Sizes, Performance, Startup Time, Build Time, Time To First Screen, ...
 - Supports TypeScript, scoped CSS, CSS Preprocessors, etc.
+- SEO batteries included
 
 ## Cons?
 

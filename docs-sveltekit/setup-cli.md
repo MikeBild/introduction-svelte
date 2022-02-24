@@ -3,8 +3,8 @@
 ```sh
 npm init svelte@next my-app
 cd my-app
-npm install
-npm run dev
+yarn
+yarn dev
 ```
 
 - each page of your app is a Svelte component
