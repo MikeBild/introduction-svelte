@@ -18,6 +18,6 @@
 
 <ul>
 	{#each articles as article}
-		<li><a href={`/blog/${article.name}`}>{article.metadata.title}</a></li>
+		<li><a href={`/blog/${article.slug}`}>{article.title}</a></li>
 	{/each}
 </ul>
