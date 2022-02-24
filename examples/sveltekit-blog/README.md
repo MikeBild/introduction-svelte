@@ -14,6 +14,7 @@
   - [Refactor about page to MDSveX](#refactor-about-page-to-mdsvex)
   - [Add a static Article using MDSveX](#add-a-static-article-using-mdsvex)
   - [SEO using a component](#seo-using-a-component)
+  - [Add a blog index page](#add-a-blog-index-page)
 
 ## Init SvelteKit
 
@@ -215,3 +216,6 @@ title: Create a Blog with SvelteKit
 
 # {title}
 ```
+
+## Add a blog index page
+
