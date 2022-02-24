@@ -1,4 +1,4 @@
-name: Introduction SvelteKit Examples Deployment
+name: Introduction to SvelteKit - SvelteKit AWS Example
 on:
   push:
     branches:

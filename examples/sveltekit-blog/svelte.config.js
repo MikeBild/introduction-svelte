@@ -7,7 +7,7 @@ export default {
 		adapter: adapter({
 			FQDN: 'sveltekit-blog.mikebild.com',
 			stackName: 'sveltekit-blog',
-			autoDeploy: 'true'
+			autoDeploy: true
 		})
 	}
 };
