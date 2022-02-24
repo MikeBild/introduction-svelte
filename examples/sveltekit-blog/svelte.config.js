@@ -3,7 +3,7 @@ import preprocess from 'svelte-preprocess';
 
 export default {
 	preprocess: preprocess(),
-	kit: {
+	kit: {		
 		adapter: adapter({
 			FQDN: 'sveltekit-blog.mikebild.com',
 			stackName: 'sveltekit-blog',
