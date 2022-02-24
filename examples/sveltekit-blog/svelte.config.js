@@ -7,8 +7,7 @@ export default {
 	preprocess: [mdsvex({ extension: '.svelte.md' }), sveltePreprocess()],
 	kit: {
 		adapter: adapter({
-			FQDN: 'sveltekit-blog.mikebild.com',
-			stackName: 'sveltekit-blog',
+			cdkProjectPath: `${process.cwd()}/deploy.js`,
 			autoDeploy: true
 		})
 	}

@@ -16,6 +16,8 @@
 	- [Add a static Article using MDSveX](#add-a-static-article-using-mdsvex)
 	- [SEO using a component](#seo-using-a-component)
 	- [Add a blog index page](#add-a-blog-index-page)
+	- [Add feedback for an article](#add-feedback-for-an-article)
+	- [Refactor using custom AWS-CDK stacks](#refactor-using-custom-aws-cdk-stacks)
 
 ## Init SvelteKit
 
@@ -278,3 +280,39 @@ title: Create a Blog with SvelteKit
 
 ## Add a blog index page
 
+## Add feedback for an article
+
+## Refactor using custom AWS-CDK stacks
+
+**Setup**
+
+`yarn add -D @aws-cdk/core`
+
+**`deploy.js`**
+```javascript
+#!/usr/bin/env node
+import { App } from '@aws-cdk/core';
+import { AWSAdapterStack } from 'sveltekit-adapter-aws';
+
+const app = new App();
+
+const { serverHandler, httpApi } = new AWSAdapterStack(app, 'sveltekit-blog', {
+  env: {
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+    region: 'us-east-1',
+  },
+  FQDN: 'sveltekit-blog.mikebild.com',
+});
+```
+
+**`svelte.config.js`**
+```javascript
+export default {
+	kit: {
+		adapter: adapter({
+			cdkProjectPath: `${process.cwd()}/deploy.js`,
+			autoDeploy: true
+		})
+	}
+};
+```
