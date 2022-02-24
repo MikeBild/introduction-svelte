@@ -83,6 +83,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
   - [Environment](docs-sveltekit/build-environment.md) 
   - [Adapters](docs-sveltekit/build-adapters.md)
 - [Recipies](docs-sveltekit/recipies.md)
+  - [SEO](docs-sveltekit/seo.md)
   - [Testing](docs-sveltekit/recipies-testing.md)
   - [Prefetching](docs-sveltekit/recipies-prefetching.md)
   - [Docker](docs-sveltekit/recipies-docker.md)
