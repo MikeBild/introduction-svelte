@@ -8,7 +8,7 @@ export async function get({ params }: any) {
 	const result = await db
 		.scan({
 			TableName: tableName,
-			ConsistentRead: false,
+			ConsistentRead: true,
 			FilterExpression: 'begins_with(#7df00, :7df00) And #7df01 = :7df01',
 			ExpressionAttributeValues: {
 				':7df00': { S: slug },

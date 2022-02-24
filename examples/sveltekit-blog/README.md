@@ -16,8 +16,9 @@
 	- [Add a static Article using MDSveX](#add-a-static-article-using-mdsvex)
 	- [SEO using a component](#seo-using-a-component)
 	- [Add a blog index page](#add-a-blog-index-page)
-	- [Add feedback for an article](#add-feedback-for-an-article)
+	- [Add feedback component for an article](#add-feedback-component-for-an-article)
 	- [Refactor using custom AWS-CDK stacks](#refactor-using-custom-aws-cdk-stacks)
+	- [Use DynamoDB table to store and fetch feedback](#use-dynamodb-table-to-store-and-fetch-feedback)
 
 ## Init SvelteKit
 
@@ -280,8 +281,13 @@ title: Create a Blog with SvelteKit
 
 ## Add a blog index page
 
-## Add feedback for an article
+```svelte
+```
 
+## Add feedback component for an article
+
+```svelte
+```
 ## Refactor using custom AWS-CDK stacks
 
 **Setup**
@@ -316,3 +322,5 @@ export default {
 	}
 };
 ```
+
+## Use DynamoDB table to store and fetch feedback
