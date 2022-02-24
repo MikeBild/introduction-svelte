@@ -9,6 +9,7 @@
   - [Refactor to components](#refactor-to-components)
   - [Add title to HTML head](#add-title-to-html-head)
   - [Add Google Fonts](#add-google-fonts)
+  - [Add CSS preprocceor (SASS)](#add-css-preprocceor-sass)
   - [Refactor about page to be prerendered](#refactor-about-page-to-be-prerendered)
   - [Add MDSveX preprocessor](#add-mdsvex-preprocessor)
   - [Refactor about page to MDSveX](#refactor-about-page-to-mdsvex)
@@ -126,6 +127,64 @@ export default {
 		font-family: 'Roboto', serif;
 	}
 </style>
+```
+
+## Add CSS preprocceor (SASS)
+
+**Setup**
+`yarn add -D sass`
+
+**`src/app.scss`**
+```sass
+h1,
+h2,
+h3,
+p,
+a,
+ul {
+	font-family: 'Overpass', sans-serif;
+	font-weight: 400;
+}
+
+a {
+	color: #ff3e00;
+	text-decoration: none;
+	&:hover {
+		color: #40b3ff;
+	}
+}
+
+code {
+	font-family: 'Fira Mono', monospace !important;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 40px;
+	color: #676778;
+}
+
+h2 {
+	font-size: 26px;
+	color: #444;
+}
+
+h3 {
+	font-size: 22px;
+	color: #222;
+}
+
+p,
+ul {
+	font-size: 18px;
+	color: #444;
+
+	&.info {
+		font-size: 14px;
+		margin-top: 0px;
+	}
+}
 ```
 
 ## Refactor about page to be prerendered
