@@ -12,11 +12,11 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Yarn Install
-        working-directory: ./examples/sveltekit-adapter-aws
+        working-directory: ./examples/sveltekit-aws
         run: yarn
 
       - name: Build and Deploy
-        working-directory: ./examples/sveltekit-adapter-aws
+        working-directory: ./examples/sveltekit-aws
         run: yarn build
         env:          
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

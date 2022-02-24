@@ -1,19 +1,21 @@
-# SvelteKit AWS Adapter
+# JAMStack using SvelteKit and AWS
 
-## Setup
+## Architecture
 
-```sh
-yarn
-```
+![Architecture](architecture.svg)
 
-## Development
+## SvelteKit options
 
-```sh
-yarn dev
-```
+- client side routing is disabled
+- partial prerendered
+- partial SSR
+- partial JavaScript
+- JSON API endpoints
 
-## Build
+## AWS options
 
-```sh
-yarn build
-```
+- Deployment via AWS-CDK
+- CDN via CloudFront
+- CDN static vs. SSR routing using AWS CloundFronts Lambda@Edge
+- SSR via AWS API-Gateway (Proxy) and AWS Lambda
+- Static + Prerendered Content via AWS S3
