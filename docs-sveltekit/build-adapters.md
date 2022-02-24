@@ -3,7 +3,6 @@
  - to deploy your app, you need to adapt it for your deployment target
  - small plugins that take the built app as input and generate output for deployment
  - by default, projects are configured to use `@sveltejs/adapter-auto`
- - 
 
 - [SvelteKit Adapters](#sveltekit-adapters)
   - [Static Sites Adapter](#static-sites-adapter)
