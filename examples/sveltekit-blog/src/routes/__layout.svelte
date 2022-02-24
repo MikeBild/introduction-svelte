@@ -6,7 +6,7 @@
 
 <svelte:head>
 	<title>SvelteKit Blog Example</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
 </svelte:head>
 

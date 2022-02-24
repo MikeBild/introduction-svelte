@@ -1,21 +1,21 @@
 # SvelteKit Blog Example
 
 - [SvelteKit Blog Example](#sveltekit-blog-example)
-  - [Init SvelteKit](#init-sveltekit)
-  - [Add AWS Adapter](#add-aws-adapter)
-  - [First deployment to AWS](#first-deployment-to-aws)
-  - [Add a about page](#add-a-about-page)
-  - [Add a master Layout](#add-a-master-layout)
-  - [Refactor to components](#refactor-to-components)
-  - [Add title to HTML head](#add-title-to-html-head)
-  - [Add Google Fonts](#add-google-fonts)
-  - [Add CSS preprocceor (SASS)](#add-css-preprocceor-sass)
-  - [Refactor about page to be prerendered](#refactor-about-page-to-be-prerendered)
-  - [Add MDSveX preprocessor](#add-mdsvex-preprocessor)
-  - [Refactor about page to MDSveX](#refactor-about-page-to-mdsvex)
-  - [Add a static Article using MDSveX](#add-a-static-article-using-mdsvex)
-  - [SEO using a component](#seo-using-a-component)
-  - [Add a blog index page](#add-a-blog-index-page)
+	- [Init SvelteKit](#init-sveltekit)
+	- [Add AWS Adapter](#add-aws-adapter)
+	- [First deployment to AWS](#first-deployment-to-aws)
+	- [Add a about page](#add-a-about-page)
+	- [Add a master Layout](#add-a-master-layout)
+	- [Refactor to components](#refactor-to-components)
+	- [Add title to HTML head](#add-title-to-html-head)
+	- [Add Google Fonts](#add-google-fonts)
+	- [Add CSS preprocceor (SASS)](#add-css-preprocceor-sass)
+	- [Refactor about page to be prerendered](#refactor-about-page-to-be-prerendered)
+	- [Add MDSveX preprocessor](#add-mdsvex-preprocessor)
+	- [Refactor about page to MDSveX](#refactor-about-page-to-mdsvex)
+	- [Add a static Article using MDSveX](#add-a-static-article-using-mdsvex)
+	- [SEO using a component](#seo-using-a-component)
+	- [Add a blog index page](#add-a-blog-index-page)
 
 ## Init SvelteKit
 
@@ -142,7 +142,7 @@ h3,
 p,
 a,
 ul {
-	font-family: 'Overpass', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 }
 
