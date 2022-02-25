@@ -26,7 +26,7 @@
 ## Init SvelteKit
 
 ```sh
-npm init sveltekit@next sveltekit-blog
+npm init svelte@next sveltekit-blog
 cd sveltekit-blog
 yarn
 yarn dev
