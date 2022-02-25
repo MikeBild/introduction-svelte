@@ -1,14 +1,16 @@
-import { DynamoDB } from 'aws-sdk';
-const db = new DynamoDB({ region: 'us-east-1' });
-const tableName =
-	process.env.DATATABLE_NAME || 'sveltekit-blog-datatable-DynamoDBTable53A22BDE-ZTGOPU31574V';
+import aws from 'aws-sdk';
 
 export async function get({ params }: any) {
 	const { slug } = params;
+	const db = new aws.DynamoDB({ region: 'us-east-1' });
+	const tableName =
+		process.env.DATATABLE_NAME || 'sveltekit-blog-datatable-DynamoDBTable53A22BDE-ZTGOPU31574V';
+
 	const result = await db
 		.scan({
 			TableName: tableName,
 			ConsistentRead: true,
+			Limit: 10000,
 			FilterExpression: 'begins_with(#7df00, :7df00) And #7df01 = :7df01',
 			ExpressionAttributeValues: {
 				':7df00': { S: slug },
@@ -28,6 +30,9 @@ export async function get({ params }: any) {
 }
 export async function post({ params }: any) {
 	const { slug } = params;
+	const db = new aws.DynamoDB({ region: 'us-east-1' });
+	const tableName =
+		process.env.DATATABLE_NAME || 'sveltekit-blog-datatable-DynamoDBTable53A22BDE-ZTGOPU31574V';
 
 	const result = await db
 		.putItem({

@@ -20,12 +20,13 @@ title: Using the SvelteKit AWS Adapter
     import SEO from '$lib/components/SEO.svelte';
     import Feedback from '$lib/components/Feedback.svelte';
     import { invalidate } from '$app/navigation';
+
     export let count = 0;    
     export let currentPathSlug = '';   
 
     async function onFeedback() {
         await fetch(`/api/feedback/${currentPathSlug}`, { method: 'POST' });        
-        await invalidate(currentPathSlug);
+        await invalidate(`/api/feedback/${currentPathSlug}`);
     }   
 </script>
 
