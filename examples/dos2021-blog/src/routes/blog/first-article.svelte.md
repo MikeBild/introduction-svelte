@@ -1,5 +1,5 @@
 ---
-title: My First Article
+title: 'My First Article'
 ---
 
 <script>

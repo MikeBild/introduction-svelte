@@ -1,5 +1,5 @@
 <script>
-    export let title = 'no title'
+    export let title = 'no title';    
 </script>
 
 <svelte:head>
