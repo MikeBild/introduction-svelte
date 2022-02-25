@@ -87,7 +87,7 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 
 ## Svelte & SvelteKit Examples
 
-- [SvelteKit Blog in AWS](examples/sveltekit-aws/README.md)
+- [SvelteKit Blog using AWS Adapter](examples/sveltekit-blog/README.md)
 - [Svelte Single Page Application](examples/svelte-spa/README.md)
 - [Svelte/Kit Components](examples/svelte-components/README.md)
 - [Svelte Storybook](examples/svelte-storybook/README.md)
