@@ -8,7 +8,7 @@ export default {
 		adapter: adapter({
 			FQDN: 'do2021-blog-daniel.mikebild.com',
 			stackName: 'dos2021-blog-daniel',
-			autoDeploy: false
+			autoDeploy: true
 		})
 	}
 };
