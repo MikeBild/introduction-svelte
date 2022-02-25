@@ -1,13 +1,13 @@
-import adapter from '@sveltejs/adapter-node';
+import { adapter } from 'sveltekit-adapter-aws';
 import preprocess from 'svelte-preprocess';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
+export default {
 	preprocess: preprocess(),
-
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			FQDN: 'dos2021-blog-mike.mikebild.com',
+			stackName: 'dos2021-blog-mike',
+			autoDeploy: true
+		})
 	}
 };
-
-export default config;

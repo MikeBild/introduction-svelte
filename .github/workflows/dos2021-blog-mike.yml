@@ -1,0 +1,25 @@
+name:  DOS2021 - SvelteKit Blog Example
+on:
+  push:
+    branches:
+      - dos2021-blog-mike
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: GitHub Checkout
+        uses: actions/checkout@v1
+
+      - name: Yarn Install
+        working-directory: ./examples/dos2021-blog
+        run: yarn
+
+      - name: Build and Deploy
+        working-directory: ./examples/dos2021-blog
+        run: yarn build
+        env:          
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          CDK_DEFAULT_ACCOUNT: ${{ secrets.AWS_ACCOUNT }}
+          CDK_DEFAULT_REGION: us-east-1
