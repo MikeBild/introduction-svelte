@@ -80,29 +80,20 @@ Still not sure what to use? Maybe these scenarios will help you decide:
 - [Hooks](docs-sveltekit/hooks.md)
 - [Prerendering](docs-sveltekit/prerendering.md)
 - [Adapters and Build-Process](docs-sveltekit/build.md)
-  - [Environment](docs-sveltekit/build-environment.md) 
   - [Adapters](docs-sveltekit/build-adapters.md)
 - [Recipies](docs-sveltekit/recipies.md)
-  - [Testing](docs-sveltekit/recipies-testing.md)
-  - [Prefetching](docs-sveltekit/recipies-prefetching.md)
   - [Docker](docs-sveltekit/recipies-docker.md)
   - [Markdown Svelte Extention](docs-sveltekit/recipies-mdsvex.md)
-  - [Components](docs-sveltekit/recipies-components.md) 
-  - [Custom Adapter](docs-sveltekit/recipies-custom-adapter.md)
-  - [API](docs-sveltekit/recipies-api.md)
-  - [GraphQL](docs-sveltekit/recipies-graphql.md)  
-  - [Auth](docs-sveltekit/recipies-auth.md)
-  - [Service Workers](docs-sveltekit/recipies-service-worker.md)
 
 ## Svelte & SvelteKit Examples
 
+- [SvelteKit Blog in AWS](examples/sveltekit-aws/README.md)
 - [Svelte Single Page Application](examples/svelte-spa/README.md)
 - [Svelte/Kit Components](examples/svelte-components/README.md)
 - [Svelte Storybook](examples/svelte-storybook/README.md)
 - [Svelte Custom-Elements](examples/svelte-custom-elements/README.md)
 - [SvelteKit Server Side Rendering](examples/sveltekit-ssr/README.md)
 - [SvelteKit Static Website](examples/sveltekit-static-website/README.md)
-- [SvelteKit AWS Adapter](examples/sveltekit-aws/README.md)
 
 ## GraphQL Server and AWS Intrastructure
 

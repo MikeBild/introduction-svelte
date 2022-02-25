@@ -1,3 +1,0 @@
-# SvelteKit Testing
-
-## Setup
