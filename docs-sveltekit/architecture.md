@@ -1,3 +1,3 @@
-# The architecture of SvelteKit
+# SvelteKit Architecture
 
 ![Architecture](sveltekit-architecture.png)
