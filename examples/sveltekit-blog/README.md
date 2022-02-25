@@ -1,24 +1,26 @@
 # SvelteKit Blog Example
 
+[SvelteKit Blog Example](https://sveltekit-blog.mikebild.com)
+
 - [SvelteKit Blog Example](#sveltekit-blog-example)
 	- [Init SvelteKit](#init-sveltekit)
 	- [Add AWS Adapter](#add-aws-adapter)
 	- [First deployment to AWS](#first-deployment-to-aws)
-	- [Add a about page](#add-a-about-page)
-	- [Add a master Layout](#add-a-master-layout)
-	- [Refactor to components](#refactor-to-components)
-	- [Add title to HTML head](#add-title-to-html-head)
-	- [Add Google Fonts](#add-google-fonts)
-	- [Add CSS preprocceor (SASS)](#add-css-preprocceor-sass)
-	- [Refactor about page to be prerendered](#refactor-about-page-to-be-prerendered)
-	- [Add MDSveX preprocessor](#add-mdsvex-preprocessor)
-	- [Refactor about page to MDSveX](#refactor-about-page-to-mdsvex)
-	- [Add a static Article using MDSveX](#add-a-static-article-using-mdsvex)
+	- [Add a About page](#add-a-about-page)
+	- [Add a Master layout](#add-a-master-layout)
+	- [Refactor to use components](#refactor-to-use-components)
+	- [SEO - add title to HTML head](#seo---add-title-to-html-head)
+	- [Add some Google gonts](#add-some-google-gonts)
+	- [Add CSS with SASS preprocessor](#add-css-with-sass-preprocessor)
+	- [Refactor the About page to be prerendered](#refactor-the-about-page-to-be-prerendered)
+	- [Add Markdown preprocessor using MDSveX](#add-markdown-preprocessor-using-mdsvex)
+	- [Refactor About page as Markdown page use MDSveX](#refactor-about-page-as-markdown-page-use-mdsvex)
+	- [Add an article using MDSveX](#add-an-article-using-mdsvex)
 	- [SEO using a component](#seo-using-a-component)
-	- [Add a blog index page](#add-a-blog-index-page)
+	- [Add blog article Index page](#add-blog-article-index-page)
+	- [Add a feedback component](#add-a-feedback-component)
 	- [Refactor using custom AWS-CDK stacks](#refactor-using-custom-aws-cdk-stacks)
 	- [Use DynamoDB table to store and fetch feedback](#use-dynamodb-table-to-store-and-fetch-feedback)
-	- [Add a feedback component](#add-a-feedback-component)
 	- [Add standalone endpoints for feedback component](#add-standalone-endpoints-for-feedback-component)
 
 ## Init SvelteKit
@@ -55,14 +57,14 @@ export default {
 
 `yarn build`
 
-## Add a about page
+## Add a About page
 
 **`src/routes/about.svelte`**
 ```svelte
 <h1>About</h1>
 ```
 
-## Add a master Layout
+## Add a Master layout
 
 **`src/routes/__layout.svelte`**
 ```svelte
@@ -73,7 +75,7 @@ export default {
 <slot />
 ```
 
-## Refactor to components
+## Refactor to use components
 
 **`src/lib/components/Nav.svelte`**
 ```svelte
@@ -94,7 +96,7 @@ export default {
 <slot />
 ```
 
-## Add title to HTML head
+## SEO - add title to HTML head
 
 **`src/routes/__layout.svelte`**
 ```svelte
@@ -110,7 +112,7 @@ export default {
 </svelte:head>
 ```
 
-## Add Google Fonts
+## Add some Google gonts
 
 **`src/routes/__layout.svelte`**
 ```svelte
@@ -133,7 +135,7 @@ export default {
 </style>
 ```
 
-## Add CSS preprocceor (SASS)
+## Add CSS with SASS preprocessor
 
 **Setup**
 `yarn add -D sass`
@@ -191,7 +193,7 @@ ul {
 }
 ```
 
-## Refactor about page to be prerendered
+## Refactor the About page to be prerendered
 
 **`src/routes/about.svelte`**
 ```svelte
@@ -202,7 +204,7 @@ ul {
 
 `yarn build`
 
-## Add MDSveX preprocessor
+## Add Markdown preprocessor using MDSveX
 
 Svelte in Markdown [MDSveX docs](https://mdsvex.pngwn.io/docs)
 
@@ -221,7 +223,7 @@ export default {
 }
 ```
 
-## Refactor about page to MDSveX
+## Refactor About page as Markdown page use MDSveX
 
 **`src/routes/about.svelte.md`**
 ```svelte
@@ -230,7 +232,7 @@ export default {
 
 `yarn build`
 
-## Add a static Article using MDSveX
+## Add an article using MDSveX
 
 **`src/routes/blog/first-article.svelte.md`**
 ```svelte
@@ -280,9 +282,9 @@ title: Create a Blog with SvelteKit
 # {title}
 ```
 
-## Add a blog index page
+## Add blog article Index page
 
-- Add the index page 
+**Add the Index page**
  
 **`src/routes/blog/first-index.svelte`**
 ```svelte
@@ -311,7 +313,7 @@ title: Create a Blog with SvelteKit
 </ul>
 ```
 
-Add a page endpoint
+**Add the page endpoint**
 
 **`src/routes/blog/index.ts`**
 ```typescript
@@ -335,6 +337,40 @@ export async function get() {
 	};
 }
 ```
+
+## Add a feedback component
+
+**`src/lib/components/Feedback.svelte`**
+```svelte
+<script>
+	export let count = 0;
+	export let onFeedback = () => {};
+</script>
+
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</svelte:head>
+
+<button on:click={onFeedback}>
+	<div class="material-icons">thumb_up</div>
+	<div class="icon-caption">{count}</div>
+</button>
+```
+
+**`src/routes/blog/first-article.svelte.md`**
+```svelte
+<script>    
+    import Feedback from '$lib/components/Feedback.svelte';
+	
+	export let count = 0;   
+
+	async function onFeedback() {} 
+</script>
+
+<Feedback {count} {onFeedback} />
+```
+
 ## Refactor using custom AWS-CDK stacks
 
 **Setup**
@@ -426,39 +462,6 @@ new DynamoDBStack(app, 'sveltekit-blog-datatable', {
 	},
 	serverHandler
 });
-```
-
-## Add a feedback component
-
-**`src/lib/components/Feedback.svelte`**
-```svelte
-<script>
-	export let count = 0;
-	export let onFeedback = () => {};
-</script>
-
-<svelte:head>
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-</svelte:head>
-
-<button on:click={onFeedback}>
-	<div class="material-icons">thumb_up</div>
-	<div class="icon-caption">{count}</div>
-</button>
-```
-
-**`src/routes/blog/first-article.svelte.md`**
-```svelte
-<script>    
-    import Feedback from '$lib/components/Feedback.svelte';
-	
-	export let count = 0;   
-
-	async function onFeedback() {} 
-</script>
-
-<Feedback {count} {onFeedback} />
 ```
 
 ## Add standalone endpoints for feedback component
