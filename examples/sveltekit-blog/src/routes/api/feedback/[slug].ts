@@ -28,6 +28,7 @@ export async function get({ params }: any) {
 		body: { count: result.Count }
 	};
 }
+
 export async function post({ params }: any) {
 	const { slug } = params;
 	const db = new aws.DynamoDB({ region: 'us-east-1' });
