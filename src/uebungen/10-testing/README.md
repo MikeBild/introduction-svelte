@@ -1,6 +1,6 @@
 # Übung 10 – Testen aus Sicht der Nutzenden
 
-**Workshop:** Lektion „Teste Svelte so, wie Nutzer es bedienen“ · **Schwierigkeit:** ★★★☆☆
+**Workshop:** Lektion „Teste Svelte so, wie Nutzende es bedienen“ · **Schwierigkeit:** ★★★☆☆
 
 Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar für das Bestellformular aus Übung 09. Du nutzt Vitest mit der Testing Library. Die findet Elemente so, wie Nutzende sie sehen, also über Rolle und Beschriftung.
 
