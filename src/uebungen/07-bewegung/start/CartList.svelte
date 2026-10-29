@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getCart } from '#lib/cart.svelte.js';
+	import { productName } from '#lib/shop.js';
 
 	const cart = getCart();
 </script>
@@ -11,7 +12,7 @@
 <ul>
 	{#each cart.items as item}
 		<li>
-			{item.quantity} × {item.productId}
+			{item.quantity} × {productName(item.productId)}
 			<button onclick={() => cart.remove(item.productId)}>Entfernen</button>
 		</li>
 	{:else}

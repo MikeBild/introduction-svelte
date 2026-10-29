@@ -1,8 +1,8 @@
-# Übung 10 – Testen aus Sicht der Nutzer
+# Übung 10 – Testen aus Sicht der Nutzenden
 
 **Workshop:** Lektion „Teste Svelte so, wie Nutzer es bedienen“ · **Schwierigkeit:** ★★★☆☆
 
-Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar für das Bestellformular aus Übung 09. Du nutzt Vitest mit der Testing Library. Die findet Elemente so, wie Nutzer sie sehen, also über Rolle und Beschriftung.
+Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar für das Bestellformular aus Übung 09. Du nutzt Vitest mit der Testing Library. Die findet Elemente so, wie Nutzende sie sehen, also über Rolle und Beschriftung.
 
 ## Dateien
 
@@ -16,7 +16,7 @@ Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar f�
 2. Tippe die Menge 0 und prüfe die Meldung am Feld über `aria-invalid` und `aria-describedby`.
 3. Leere das Feld und prüfe, dass nichts bestellt wird.
 
-Finde Elemente mit `getByRole` und `getByLabelText`, nicht mit CSS-Selektoren. Für Eingaben nutzt du `userEvent.setup()`, denn das löst dieselben Events aus wie echte Nutzer.
+Finde Elemente mit `getByRole` und `getByLabelText`, nicht mit CSS-Selektoren. Für Eingaben nutzt du `userEvent.setup()`, denn das löst dieselben Events aus wie echte Nutzende.
 
 ## Prüfen
 

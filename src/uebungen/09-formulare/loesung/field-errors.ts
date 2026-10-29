@@ -1,6 +1,6 @@
 import type { z } from 'zod';
 
-// Texte für Nutzer stehen in der Oberfläche, nicht im Schema.
+// Texte für Nutzende stehen in der Oberfläche, nicht im Schema.
 const messages: Record<string, string> = {
 	quantity: 'Gib eine ganze Zahl ab 1 ein.',
 	productId: 'Wähle ein Produkt.'

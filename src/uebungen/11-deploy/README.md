@@ -9,7 +9,7 @@
 - `start/app.ts` – hier arbeitest du: `createApp(handler)` baut die Express-App
 - `server.ts` im Wurzelverzeichnis – startet den echten Build mit `createApp` aus `loesung/`
 - `Dockerfile` – ein Container-Image für den Betrieb
-- `Dockerfile.lambda` – dasselbe Image als AWS Lambda Function, mit dem AWS Lambda Web Adapter
+- `Dockerfile.lambda` – dasselbe Image als AWS-Lambda-Funktion, mit dem AWS Lambda Web Adapter
 
 ## Aufgaben
 
@@ -45,16 +45,16 @@ docker run -p 3000:3000 werkstatt-shop
 
 ## Auf AWS Lambda
 
-`Dockerfile.lambda` baut auf dem Image `werkstatt-shop` auf und ergänzt den [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter) als Extension. Er startet den Node-Server in der Lambda Function und übersetzt jedes Lambda-Event in einen HTTP-Request. `/healthz` dient als Readiness Check.
+`Dockerfile.lambda` baut auf dem Image `werkstatt-shop` auf und ergänzt den [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter) als Extension. Er startet den Node-Server in der Lambda-Funktion und übersetzt jedes Lambda-Event in einen HTTP-Request. `/healthz` dient als Readiness Check.
 
 ```bash
 docker build -f src/uebungen/11-deploy/Dockerfile.lambda -t werkstatt-shop-lambda src/uebungen/11-deploy
 ```
 
-Das Image lädst du in Amazon ECR hoch und legst damit eine Lambda Function an, etwa mit AWS CDK. Wie das geht, zeigt der Workshop [„AWS Serverless mit Lambda, CDK und DynamoDB“](https://workshops.mikebild.dev/w/aws-serverless/remote/).
+Das Image lädst du in Amazon ECR hoch und legst damit eine Lambda-Funktion an, etwa mit AWS CDK. Wie das geht, zeigt der Workshop [„AWS Serverless mit Lambda, CDK und DynamoDB“](https://workshops.mikebild.dev/w/aws-serverless/remote/).
 
 ## Zum Nachdenken
 
 - Was gewinnst du mit Express vor dem Handler, und was kostet es dich gegenüber `node build`?
-- Welche Umgebungsvariablen braucht die App in Production, und wo setzt du sie?
+- Welche Umgebungsvariablen braucht die App in der Produktion, und wo setzt du sie?
 - Wo liegt der Unterschied, wenn du statt `adapter-node` den `adapter-static` nimmst?
