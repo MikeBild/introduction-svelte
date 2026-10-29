@@ -13,7 +13,7 @@
 5. `createEventDispatcher` → Callback-Prop `onadd({ product, quantity })`.
 6. `<slot name="hint" />` → Snippet-Prop `hint` mit `{@render hint?.()}`.
 
-Den Großteil erledigt auch das Migrationsskript: `npx sv migrate svelte-5`. Probier es auf einer Kopie aus und vergleiche das Ergebnis mit deinem. Callback-Props statt `createEventDispatcher` musst du meist selbst umbauen.
+Den Großteil erledigt auch das Migrationsskript: `npx sv migrate svelte-5`. Probiere es auf einer Kopie aus und vergleiche das Ergebnis mit deinem. Callback-Props statt `createEventDispatcher` musst du meist selbst umbauen.
 
 ## Prüfen
 

@@ -1,0 +1,5 @@
+# Das Image aus Dockerfile (Express mit /healthz vor dem SvelteKit-Handler) als AWS Lambda Function
+FROM werkstatt-shop
+COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:1.1.0 \
+  /lambda-adapter /opt/extensions/lambda-adapter
+ENV PORT=8080 AWS_LWA_READINESS_CHECK_PATH=/healthz
