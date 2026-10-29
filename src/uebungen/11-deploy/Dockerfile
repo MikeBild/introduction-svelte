@@ -1,4 +1,4 @@
-# Container-Image für den Werkstatt-Shop: Build mit allen Paketen, Laufzeit nur mit Production-Paketen
+# Container-Image für den Werkstatt-Shop: Build mit allen Paketen, Laufzeit nur mit Paketen für die Produktion
 FROM node:26-slim AS build
 WORKDIR /app
 COPY package.json package-lock.json .npmrc ./

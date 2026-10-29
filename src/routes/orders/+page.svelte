@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { euro, totalCents } from '#lib/shop.js';
+	import { euro, orderStatusLabel, totalCents } from '#lib/shop.js';
 	import QuantityInput from '#uebungen/04-props-events/loesung/QuantityInput.svelte';
 	import type { PageProps } from './$types';
 
@@ -28,7 +28,10 @@
 <h2>Bestellungen</h2>
 <ul>
 	{#each data.orders as order (order.id)}
-		<li><a href="/orders/{order.id}">{order.id}</a> · {order.status} · {euro(totalCents(order.items))}</li>
+		<li>
+			<a href="/orders/{order.id}">Bestellung {order.id}</a> · {orderStatusLabel[order.status]} ·
+			{euro(totalCents(order.items))}
+		</li>
 	{:else}
 		<li>Noch keine Bestellungen. Wähle oben ein Produkt und eine Menge und klick auf „Bestellen“.</li>
 	{/each}

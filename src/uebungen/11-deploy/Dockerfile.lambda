@@ -1,4 +1,4 @@
-# Das Image aus Dockerfile (Express mit /healthz vor dem SvelteKit-Handler) als AWS Lambda Function
+# Das Image aus Dockerfile (Express mit /healthz vor dem SvelteKit-Handler) als AWS-Lambda-Funktion
 FROM werkstatt-shop
 COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:1.1.0 \
   /lambda-adapter /opt/extensions/lambda-adapter

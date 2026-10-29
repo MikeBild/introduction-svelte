@@ -129,7 +129,7 @@ Stand Oktober 2026: Svelte 5.57 (Runes, Snippets, Event-Attribute) · SvelteKit 
 | `express`, `@types/express` | Optional: Express 5 vor dem SvelteKit-Handler (Übung 11) |
 | `typescript`, `svelte-check`, `@types/node` | Typprüfung |
 | `vitest`, `jsdom` | Tests. Die Übungen 01 bis 09 und 12 testen Komponenten mit `mount` aus `svelte`. |
-| `@testing-library/svelte`, `@testing-library/user-event` | Nur Übung 10: Tests aus Sicht der Nutzer schreiben |
+| `@testing-library/svelte`, `@testing-library/user-event` | Nur Übung 10: Tests aus Sicht der Nutzenden schreiben |
 
 ## Weiterlesen
 
@@ -145,3 +145,7 @@ Stand Oktober 2026: Svelte 5.57 (Runes, Snippets, Event-Attribute) · SvelteKit 
 ## Archiv
 
 Die ursprünglichen Materialien von 2022 (Svelte 3, SvelteKit Beta, Beispiele mit AWS und GraphQL) liegen unverändert in [`legacy/`](legacy/README.md).
+
+## Lizenz
+
+[MIT](LICENSE)

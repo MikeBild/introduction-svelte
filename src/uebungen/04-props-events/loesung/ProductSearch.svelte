@@ -16,7 +16,8 @@
 	});
 </script>
 
-<input placeholder="Suchen" bind:value={query} />
+<label for="product-search" class="visually-hidden">Produkte suchen</label>
+<input id="product-search" type="search" placeholder="z. B. Hammer" bind:value={query} />
 <label><input type="checkbox" bind:checked={onlyInStock} /> nur lieferbar</label>
 <p>{visible.length} Treffer</p>
 
@@ -25,3 +26,18 @@
 		{#if product.stock === 0}<small>Ausverkauft</small>{/if}
 	</ProductCard>
 {/each}
+
+<style>
+	/* Nur für Screenreader sichtbar: Das Feld hat trotzdem eine echte Beschriftung. */
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
+	}
+</style>

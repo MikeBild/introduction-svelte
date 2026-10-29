@@ -23,6 +23,19 @@ export const totalCents = (items: OrderItem[]) =>
 export const euro = (cents: number) =>
 	(cents / 100).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
 
+/** Lesbare Bezeichnungen für den Bestellstatus – zentral für alle Ansichten. */
+export const orderStatusLabel: Record<OrderStatus, string> = {
+	draft: 'Entwurf',
+	placed: 'Bestellt',
+	paid: 'Bezahlt',
+	shipped: 'Versandt',
+	cancelled: 'Storniert'
+};
+
+/** Produktname statt ID wie „p-1“ in der Oberfläche. Unbekannte IDs bleiben sichtbar. */
+export const productName = (id: string, products: Product[] = sampleProducts) =>
+	products.find((p) => p.id === id)?.name ?? id;
+
 export const productId = (id: string) => id as ProductId;
 export const orderId = (id: string) => id as OrderId;
 export const customerId = (id: string) => id as CustomerId;

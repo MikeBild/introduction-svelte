@@ -38,8 +38,8 @@ describe('07 Bewegung – CartList', () => {
 		cart.add(hammer);
 		cart.add(schrauber);
 		const { body } = render(CartHarness, { props: { cart } });
-		expect(body).toContain(`2 × ${hammer.id}`);
-		expect(body).toContain(`1 × ${schrauber.id}`);
+		expect(body).toContain(`2 × ${hammer.name}`);
+		expect(body).toContain(`1 × ${schrauber.name}`);
 	});
 
 	it('nutzt einen keyed each-Block', () => {

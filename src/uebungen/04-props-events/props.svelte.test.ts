@@ -62,7 +62,9 @@ describe('04 Bindings – ProductSearch', () => {
 	it('filtert über das gebundene Suchfeld', () => {
 		const body = show(mount(ProductSearch, { target, props: { products: sampleProducts, onadd: () => {} } }));
 		expect(body.querySelector('p')?.textContent).toBe('4 Treffer');
-		type(body.querySelector('input[placeholder="Suchen"]')!, 'schraub');
+		const search = body.querySelector<HTMLInputElement>('#product-search')!;
+		expect(body.querySelector('label[for="product-search"]')?.textContent).toBe('Produkte suchen');
+		type(search, 'schraub');
 		expect(body.querySelector('p')?.textContent).toBe('2 Treffer');
 	});
 
