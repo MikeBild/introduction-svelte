@@ -1,6 +1,6 @@
 # Übung 11 – Build und Deployment
 
-**Workshop:** Lektionen „Welcher Adapter bringt den Shop in Production?“ und „Drei Wege, SvelteKit auf AWS zu betreiben“ · **Schwierigkeit:** ★★★☆☆
+**Workshop:** Lektionen „Welcher Adapter bringt den Shop in Produktion?“ und „Drei Wege, SvelteKit auf AWS zu betreiben“ · **Schwierigkeit:** ★★★☆☆
 
 `npm run build` erzeugt mit `@sveltejs/adapter-node` einen Node-Server in `build/`. Den startest du direkt mit `node build`. Brauchst du eigene Routen davor, etwa einen Health Check, hängst du den SvelteKit-Handler in Express 5 ein.
 
