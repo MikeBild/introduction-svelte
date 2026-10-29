@@ -13,9 +13,9 @@ Du schreibst die Server-Logik des Shops: Produkte und eine Bestellung laden, Bes
 ## Aufgaben
 
 1. `loadProducts` liefert `{ products }` aus `db.products()`.
-2. `loadOrder` liest die Bestellung. Gibt es sie nicht, rufst du `error(404, 'Bestellung nicht gefunden')` auf.
-3. `placeOrder` liest die Formulardaten und prüft sie mit `PlaceOrderInput.safeParse`. Bei ungültigen Daten gibst du `fail(400, { error: 'Bitte Produkt und Menge prüfen' })` zurück.
-4. Lege die Bestellung mit `db.placeOrder` an. Bei `null` gibst du `fail(409, { error: 'Nicht genug Bestand' })` zurück.
+2. `loadOrder` liest die Bestellung. Gibt es sie nicht, rufst du `error(404, 'Diese Bestellung gibt es nicht. Wähle eine aus der Bestellliste.')` auf.
+3. `placeOrder` liest die Formulardaten und prüft sie mit `PlaceOrderInput.safeParse`. Bei ungültigen Daten gibst du `fail(400, { error: 'Wähle ein Produkt und eine Menge ab 1.' })` zurück.
+4. Lege die Bestellung mit `db.placeOrder` an. Bei `null` gibst du `fail(409, { error: 'Zu wenig auf Lager. Wähle eine kleinere Menge oder ein anderes Produkt.' })` zurück.
 5. Bei Erfolg leitest du mit ``redirect(303, `/orders/${order.id}`)`` weiter.
 
 ## Prüfen

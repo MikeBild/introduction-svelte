@@ -32,7 +32,7 @@ describe('08 SvelteKit – load', () => {
 	it('meldet eine unbekannte Bestellung als 404', async () => {
 		const thrown = await loadOrder({ params: { id: 'o-404' } }).catch((e: unknown) => e);
 		expect(isHttpError(thrown, 404)).toBe(true);
-		expect(isHttpError(thrown) && thrown.body.message).toBe('Bestellung nicht gefunden');
+		expect(isHttpError(thrown) && thrown.body.message).toBe('Diese Bestellung gibt es nicht. Wähle eine aus der Bestellliste.');
 	});
 });
 
@@ -40,13 +40,13 @@ describe('08 SvelteKit – Form Action bestellen', () => {
 	it('lehnt ungültige Eingaben mit 400 ab', async () => {
 		const { result } = await run({ customerId: 'c-1', productId: hammer.id, quantity: '0' });
 		expect(isActionFailure(result)).toBe(true);
-		expect(result).toMatchObject({ status: 400, data: { error: 'Bitte Produkt und Menge prüfen' } });
+		expect(result).toMatchObject({ status: 400, data: { error: 'Wähle ein Produkt und eine Menge ab 1.' } });
 	});
 
 	it('lehnt fehlenden Bestand mit 409 ab', async () => {
 		const { result } = await run({ customerId: 'c-1', productId: wasserwaage.id, quantity: '1' });
 		expect(isActionFailure(result)).toBe(true);
-		expect(result).toMatchObject({ status: 409, data: { error: 'Nicht genug Bestand' } });
+		expect(result).toMatchObject({ status: 409, data: { error: 'Zu wenig auf Lager. Wähle eine kleinere Menge oder ein anderes Produkt.' } });
 	});
 
 	it('legt die Bestellung an und leitet mit 303 weiter', async () => {
