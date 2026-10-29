@@ -16,19 +16,24 @@
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"test:start": "vitest run --mode start",
-		"test:start:watch": "vitest --mode start"
+		"test:start:watch": "vitest --mode start",
+		"start:express": "node server.ts"
 	},
 	"imports": {
 		"#lib/*": "./src/lib/*",
 		"#uebungen/*": "./src/uebungen/*"
 	},
 	"dependencies": {
+		"express": "^5.3.0",
 		"zod": "^4.6.7"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^6.0.0",
 		"@sveltejs/kit": "^3.1.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"@testing-library/svelte": "^5.4.2",
+		"@testing-library/user-event": "^14.6.8",
+		"@types/express": "^5.0.6",
 		"@types/node": "^26",
 		"jsdom": "^30.1.3",
 		"svelte": "^5.57.3",

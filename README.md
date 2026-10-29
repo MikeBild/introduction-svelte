@@ -28,6 +28,7 @@ npm run dev        # App unter http://localhost:5173
 | `npm run check` | Typprüfung mit `svelte-check` (TypeScript strict) |
 | `npm run build` | Produktions-Build mit `@sveltejs/adapter-node`, Ergebnis in `build/` |
 | `npm run preview` | Startet den Build lokal |
+| `npm run start:express` | Startet den Build hinter Express 5 (Übung 11) |
 
 ## So arbeitest du mit den Übungen
 
@@ -62,8 +63,12 @@ Die Übungen folgen den Abschnitten des Foliensatzes, von einfach nach schwer.
 | 06 | Geteilter Zustand | [06-geteilter-zustand](src/uebungen/06-geteilter-zustand/) | `createContext`, Warenkorb-Badge, `readable`-Store für den Online-Status | ★★★★☆ |
 | 07 | Bewegung | [07-bewegung](src/uebungen/07-bewegung/) | `in:fly`, `out:fade`, `animate:flip`, `Tween.of`, `prefersReducedMotion` | ★★★☆☆ |
 | 08 | SvelteKit | [08-sveltekit](src/uebungen/08-sveltekit/) | Load-Funktionen, `error(404)`, Form Action mit zod, `fail`, `redirect` | ★★★★★ |
+| 09 | Props und Events, Form Actions | [09-formulare](src/uebungen/09-formulare/) | `onsubmit`, `bind:value`, Prüfung mit `PlaceOrderInput`, Fehler am Feld | ★★★☆☆ |
+| 10 | – (Workshop-Lektion Testing) | [10-testing](src/uebungen/10-testing/) | Tests selbst schreiben mit Vitest, Testing Library und `user-event` | ★★★☆☆ |
+| 11 | – (Workshop-Lektion Deployment) | [11-deploy](src/uebungen/11-deploy/) | `adapter-node`, Express 5 vor dem Handler, Health Check, Container | ★★★☆☆ |
+| 12 | Was sich gegenüber Svelte 4 geändert hat | [12-migration](src/uebungen/12-migration/) | Svelte-4-Komponente auf Runes, Callback-Props und Snippets umstellen | ★★★☆☆ |
 
-Die Abschnitte „Ausblick: Remote Functions“ und „Was sich gegenüber Svelte 4 geändert hat“ haben keine eigene Übung. Fragen dazu stehen in den READMEs von 08 und 05.
+Der Abschnitt „Ausblick: Remote Functions“ hat keine eigene Übung, denn Remote Functions sind in SvelteKit 3.1 noch experimentell. Fragen dazu stehen im README von 08. Die Übungen 09 bis 12 gehören zu Lektionen des Workshops [Svelte 5 & SvelteKit](https://workshops.mikebild.dev), die über den Foliensatz hinausgehen.
 
 ## Der Werkstatt-Shop
 
@@ -88,7 +93,7 @@ src/
     cart/               Warenkorb mit Bewegung (07)
     orders/             Bestellformular und Übersicht (08)
     orders/[id]/        Eine Bestellung, sonst 404 (08)
-  uebungen/             Die acht Übungen
+  uebungen/             Die zwölf Übungen
 ```
 
 Die App unter `src/routes` setzt sich aus den Lösungen zusammen. Willst du deine eigene Version im Browser sehen, stell in der jeweiligen Route den Import von `loesung` auf `start` um.
@@ -98,7 +103,8 @@ Die App unter `src/routes` setzt sich aus den Lösungen zusammen. Willst du dein
 - Keine `svelte.config.js` mehr. Die Konfiguration steht im Vite-Plugin: `sveltekit({ adapter: adapter() })` in `vite.config.ts`.
 - `#lib/…` statt `$lib/…`. Das ist ein normaler Subpath-Import aus der `package.json` (`"imports"`). Genauso funktioniert hier `#uebungen/…`.
 - `$app/state` statt `$app/stores`: `page` ist ein reaktives Objekt, kein Store.
-- `error(status, message)` erwartet als zweiten Parameter immer einen String.
+- `error(status, message)` erwartet als zweiten Parameter einen String. Die Objektform ist veraltet.
+- `adapter-node` kennt die Umgebungsvariable `ORIGIN` nicht mehr. Die Origin kommt aus `PROTOCOL_HEADER`/`HOST_HEADER` oder aus `paths.origin`, siehe Übung 11.
 
 Der Foliensatz zeigt `@sveltejs/adapter-auto`. Hier steckt `@sveltejs/adapter-node` drin, damit `npm run build` ohne Hosting-Plattform einen lauffähigen Server erzeugt (`node build`). Hinter einem Proxy ohne HTTPS setzt du `PROTOCOL_HEADER` bzw. `HOST_HEADER`, siehe [adapter-node](https://svelte.dev/docs/kit/adapter-node).
 
@@ -109,8 +115,10 @@ Der Foliensatz zeigt `@sveltejs/adapter-auto`. Hier steckt `@sveltejs/adapter-no
 | `svelte`, `@sveltejs/kit`, `@sveltejs/vite-plugin-svelte`, `vite` | Framework und Build |
 | `@sveltejs/adapter-node` | Build als Node-Server |
 | `zod` | Gemeinsames Schema für Formular und Form Action |
+| `express`, `@types/express` | Optional: Express 5 vor dem SvelteKit-Handler (Übung 11) |
 | `typescript`, `svelte-check`, `@types/node` | Typprüfung |
-| `vitest`, `jsdom` | Tests. Komponenten werden mit `mount` aus `svelte` getestet, ohne Testing Library. |
+| `vitest`, `jsdom` | Tests. Die Übungen 01 bis 09 und 12 testen Komponenten mit `mount` aus `svelte`. |
+| `@testing-library/svelte`, `@testing-library/user-event` | Nur Übung 10: Tests aus Sicht der Nutzer schreiben |
 
 ## Weiterlesen
 
