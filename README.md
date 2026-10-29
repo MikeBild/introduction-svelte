@@ -1,26 +1,35 @@
-# Svelte 5 & SvelteKit – Übungen
+# Übungen: Svelte 5 und SvelteKit
 
-Übungen zum Foliensatz **[Svelte 5 & SvelteKit](https://slides.mikebild.dev/introduction-svelte.html)**. Durchgehendes Beispiel ist ein kleiner **Werkstatt-Shop** mit Produktliste, Warenkorb, Bestellformular und Bestellübersicht.
+Übungs-Repo zum Workshop „Svelte 5 und SvelteKit mit TypeScript“. Jede Übung hat einen Startpunkt mit TODOs, Tests und eine mögliche Lösung. Durchgehendes Beispiel ist ein kleiner **Werkstatt-Shop** mit Produktliste, Warenkorb, Bestellformular und Bestellübersicht.
 
-Stand Oktober 2026: Svelte 5.57 (Runes, Snippets, Event-Attribute) · SvelteKit 3.1 · Vite 8 · TypeScript 6 (strict) · Vitest 5 · Node.js 26
+## Was du lernst
+
+- Komponenten mit Runes: `$state`, `$derived`, `$effect`, Props und Snippets
+- Zustand per Context teilen und Änderungen mit Transitions und Tweens zeigen
+- Mit SvelteKit laden und bestellen, testen, deployen und von Svelte 4 migrieren
 
 ## Voraussetzungen
 
-- [Node.js 26](https://nodejs.org/) – mit [nvm](https://github.com/nvm-sh/nvm) reicht `nvm use`, die Version steht in `.nvmrc`
+- Vorwissen: Grundkenntnisse in JavaScript/TypeScript und HTML
+- **Node.js 26** – `nvm use` liest die Version aus [`.nvmrc`](.nvmrc).
 - Ein Editor mit Svelte-Unterstützung, z. B. VS Code mit der [Svelte-Erweiterung](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
-- Grundkenntnisse in JavaScript/TypeScript und HTML
 
-## Schnellstart
+## Einrichten
 
 ```bash
+git clone https://github.com/MikeBild/introduction-svelte.git
+cd introduction-svelte
 nvm use
 npm ci
+npm test           # alle Tests gegen die Lösungen
 npm run dev        # App unter http://localhost:5173
 ```
 
+Alle Befehle im Überblick:
+
 | Befehl | Was passiert |
 | --- | --- |
-| `npm run dev` | Startet die App aus `src/routes`. Sie nutzt die Lösungen aller Übungen. |
+| `npm run dev` | Startet die App aus `src/routes`, zusammengesetzt aus den Lösungen aller Übungen. |
 | `npm test` | Führt alle Tests gegen die **Lösungen** aus. Alles sollte grün sein. |
 | `npm run test:start` | Führt dieselben Tests gegen **deinen Code** in `start/` aus. |
 | `npm run test:start -- 03` | Nur die Tests von Übung 03 |
@@ -30,7 +39,7 @@ npm run dev        # App unter http://localhost:5173
 | `npm run preview` | Startet den Build lokal |
 | `npm run start:express` | Startet den Build hinter Express 5 (Übung 11) |
 
-## So arbeitest du mit den Übungen
+## So arbeitest du mit einer Übung
 
 Jede Übung liegt in `src/uebungen/<nr>-<thema>/`:
 
@@ -49,7 +58,7 @@ src/uebungen/03-ableiten-effekte/
 
 Am Anfang schlagen die Tests im Modus `start` fehl. Das ist Absicht. `npm run check` bleibt trotzdem fehlerfrei, denn auch die Startpunkte sind gültiges TypeScript.
 
-## Abschnitt → Übung
+## Übungen
 
 Die Übungen folgen den Abschnitten des Foliensatzes, von einfach nach schwer.
 
@@ -68,7 +77,7 @@ Die Übungen folgen den Abschnitten des Foliensatzes, von einfach nach schwer.
 | 11 | – (Workshop-Lektion Deployment) | [11-deploy](src/uebungen/11-deploy/) | `adapter-node`, Express 5 vor dem Handler, Health Check, Container | ★★★☆☆ |
 | 12 | Was sich gegenüber Svelte 4 geändert hat | [12-migration](src/uebungen/12-migration/) | Svelte-4-Komponente auf Runes, Callback-Props und Snippets umstellen | ★★★☆☆ |
 
-Der Abschnitt „Ausblick: Remote Functions“ hat keine eigene Übung, denn Remote Functions sind in SvelteKit 3.1 noch experimentell. Fragen dazu stehen im README von 08. Die Übungen 09 bis 12 gehören zu Lektionen des Workshops [Svelte 5 & SvelteKit](https://workshops.mikebild.dev), die über den Foliensatz hinausgehen.
+Der Abschnitt „Ausblick: Remote Functions“ hat keine eigene Übung, denn Remote Functions sind in SvelteKit 3.1 noch experimentell. Fragen dazu stehen im README von 08. Die Übungen 09 bis 12 gehören zu Lektionen des Workshops „Svelte 5 und SvelteKit mit TypeScript“, die über den Foliensatz hinausgehen.
 
 ## Der Werkstatt-Shop
 
@@ -110,6 +119,8 @@ Der Foliensatz zeigt `@sveltejs/adapter-auto`. Hier steckt `@sveltejs/adapter-no
 
 ## Bewusst wenige Pakete
 
+Stand Oktober 2026: Svelte 5.57 (Runes, Snippets, Event-Attribute) · SvelteKit 3.1 · Vite 8 · TypeScript 6 (strict) · Vitest 5 · Node.js 26
+
 | Paket | Wozu |
 | --- | --- |
 | `svelte`, `@sveltejs/kit`, `@sveltejs/vite-plugin-svelte`, `vite` | Framework und Build |
@@ -125,6 +136,11 @@ Der Foliensatz zeigt `@sveltejs/adapter-auto`. Hier steckt `@sveltejs/adapter-no
 - [Svelte Docs](https://svelte.dev/docs/svelte/overview) · [Svelte 5 Migration Guide](https://svelte.dev/docs/svelte/v5-migration-guide)
 - [SvelteKit Docs](https://svelte.dev/docs/kit/introduction) · [Migration zu SvelteKit 3](https://svelte.dev/docs/kit/migrating-to-sveltekit-3)
 - [Form Actions](https://svelte.dev/docs/kit/form-actions) · [Remote Functions](https://svelte.dev/docs/kit/remote-functions)
+
+## Workshop und Folien
+
+- Workshop: [„Svelte 5 und SvelteKit mit TypeScript“](https://workshops.mikebild.dev/w/svelte/remote/)
+- Folien: [slides.mikebild.dev/introduction-svelte](https://slides.mikebild.dev/introduction-svelte.html)
 
 ## Archiv
 

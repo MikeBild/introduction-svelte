@@ -4,7 +4,7 @@
 
 Du baust einen Mengen-Stepper für ein Produkt zu 49,90 €. Ziel ist der erste Kontakt mit Runes und Event-Attributen.
 
-## Datei
+## Dateien
 
 - `start/Stepper.svelte` – hier arbeitest du
 - `loesung/Stepper.svelte` – zum Vergleichen, wenn du fertig bist

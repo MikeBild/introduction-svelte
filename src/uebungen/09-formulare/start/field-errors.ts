@@ -2,8 +2,8 @@ import type { z } from 'zod';
 
 // Texte für Nutzer stehen in der Oberfläche, nicht im Schema.
 const messages: Record<string, string> = {
-	quantity: 'Bitte eine ganze Zahl ab 1',
-	productId: 'Bitte ein Produkt wählen'
+	quantity: 'Gib eine ganze Zahl ab 1 ein.',
+	productId: 'Wähle ein Produkt.'
 };
 
 /** Macht aus zod-Issues ein Objekt „Pfad → Meldung“, z. B. `items.0.quantity`. */

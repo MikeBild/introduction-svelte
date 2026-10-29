@@ -14,7 +14,7 @@ Produktliste, Warenkorb und Kopfzeile teilen sich einen Warenkorb. Du stellst ih
 ## Aufgaben
 
 1. Erzeuge mit `createContext<Cart>()` ein typisiertes Paar und exportiere es als `getCart` und `setCart`.
-2. `online`: Setze den Wert auf `navigator.onLine` und aktualisiere ihn bei den window-Events `online` und `offline`. Entferne die Listener wieder. Beim SSR gibt es kein `window`.
+2. `online`: Setze den Wert auf `navigator.onLine` und aktualisiere ihn bei den window-Events `online` und `offline`. Entferne die Listener wieder. Beim Server-Side Rendering (SSR) gibt es kein `window`.
 3. `CartBadge`: Hole den Warenkorb mit `getCart()` und zeig Anzahl und Summe: `Warenkorb (2) · 39,80 €`.
 4. Zeig `<p role="status">Offline – …</p>` nur, wenn `$online` false ist.
 

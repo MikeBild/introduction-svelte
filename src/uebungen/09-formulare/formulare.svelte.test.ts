@@ -53,7 +53,7 @@ describe('09 Formulare – CheckoutForm', () => {
 		expect(ui.onorder).not.toHaveBeenCalled();
 		expect(ui.quantity.getAttribute('aria-invalid')).toBe('true');
 		expect(ui.quantity.getAttribute('aria-describedby')).toBe('quantity-error');
-		expect(document.getElementById('quantity-error')?.textContent).toBe('Bitte eine ganze Zahl ab 1');
+		expect(document.getElementById('quantity-error')?.textContent).toBe('Gib eine ganze Zahl ab 1 ein.');
 	});
 
 	it('entfernt den Fehler nach einer gültigen Eingabe', () => {

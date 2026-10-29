@@ -9,7 +9,7 @@
 </script>
 
 <!-- TODO 3: `onclick` verringert bzw. erhöht die Menge; „−“ ist bei Menge 1 deaktiviert. -->
-<button aria-label="weniger">−</button>
+<button aria-label="Menge verringern">−</button>
 <span data-testid="menge">{quantity}</span>
-<button aria-label="mehr">+</button>
+<button aria-label="Menge erhöhen">+</button>
 <p>Summe: {euro(total)}</p>

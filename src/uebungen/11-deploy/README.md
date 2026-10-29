@@ -51,7 +51,7 @@ docker run -p 3000:3000 werkstatt-shop
 docker build -f src/uebungen/11-deploy/Dockerfile.lambda -t werkstatt-shop-lambda src/uebungen/11-deploy
 ```
 
-Das Image lädst du in Amazon ECR hoch und legst damit eine Lambda Function an, etwa mit AWS CDK. Wie das geht, zeigt der Workshop AWS Serverless.
+Das Image lädst du in Amazon ECR hoch und legst damit eine Lambda Function an, etwa mit AWS CDK. Wie das geht, zeigt der Workshop [„AWS Serverless mit Lambda, CDK und DynamoDB“](https://workshops.mikebild.dev/w/aws-serverless/remote/).
 
 ## Zum Nachdenken
 

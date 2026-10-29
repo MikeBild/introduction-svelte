@@ -29,15 +29,15 @@ describe('12 Migration – AddToCart', () => {
 
 	it('verhält sich wie vorher: Menge und Summe', () => {
 		const ui = setup();
-		ui.click('mehr');
-		ui.click('mehr');
+		ui.click('Menge erhöhen');
+		ui.click('Menge erhöhen');
 		expect(document.body.querySelector('[data-testid="menge"]')?.textContent).toBe('3');
 		expect(document.body.querySelector('p')?.textContent).toBe(`Summe: ${euro(3 * hammer.priceCents)}`);
 	});
 
 	it('meldet das Hinzufügen über die Callback-Prop onadd', () => {
 		const ui = setup();
-		ui.click('mehr');
+		ui.click('Menge erhöhen');
 		ui.click('In den Warenkorb');
 		expect(ui.onadd).toHaveBeenCalledWith({ product: hammer, quantity: 2 });
 	});

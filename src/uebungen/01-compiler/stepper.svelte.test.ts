@@ -15,8 +15,8 @@ describe('01 Compiler – Stepper', () => {
 		const button = (label: string) =>
 			document.body.querySelector<HTMLButtonElement>(`button[aria-label="${label}"]`)!;
 		return {
-			mehr: button('mehr'),
-			weniger: button('weniger'),
+			mehr: button('Menge erhöhen'),
+			weniger: button('Menge verringern'),
 			menge: () => document.body.querySelector('[data-testid="menge"]')!.textContent,
 			summe: () => document.body.querySelector('p')!.textContent
 		};
