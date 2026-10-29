@@ -1,6 +1,6 @@
 # Übung 11 – Build und Deployment
 
-**Folien:** Lektion „Build und Deployment“ im Workshop · **Schwierigkeit:** ★★★☆☆
+**Workshop:** Lektionen „Welcher Adapter bringt den Shop in Production?“ und „Drei Wege, SvelteKit auf AWS zu betreiben“ · **Schwierigkeit:** ★★★☆☆
 
 `npm run build` erzeugt mit `@sveltejs/adapter-node` einen Node-Server in `build/`. Den startest du direkt mit `node build`. Brauchst du eigene Routen davor, etwa einen Health Check, hängst du den SvelteKit-Handler in Express 5 ein.
 
@@ -8,7 +8,8 @@
 
 - `start/app.ts` – hier arbeitest du: `createApp(handler)` baut die Express-App
 - `server.ts` im Wurzelverzeichnis – startet den echten Build mit `createApp` aus `loesung/`
-- `Dockerfile` – ein Container-Image für den Betrieb, etwa auf AWS
+- `Dockerfile` – ein Container-Image für den Betrieb
+- `Dockerfile.lambda` – dasselbe Image als AWS Lambda Function, mit dem AWS Lambda Web Adapter
 
 ## Aufgaben
 
@@ -41,6 +42,16 @@ Lokal über `http://localhost` lehnt SvelteKit deshalb Form Actions mit 403 ab. 
 docker build -f src/uebungen/11-deploy/Dockerfile -t werkstatt-shop .
 docker run -p 3000:3000 werkstatt-shop
 ```
+
+## Auf AWS Lambda
+
+`Dockerfile.lambda` baut auf dem Image `werkstatt-shop` auf und ergänzt den [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter) als Extension. Er startet den Node-Server in der Lambda Function und übersetzt jedes Lambda-Event in einen HTTP-Request. `/healthz` dient als Readiness Check.
+
+```bash
+docker build -f src/uebungen/11-deploy/Dockerfile.lambda -t werkstatt-shop-lambda src/uebungen/11-deploy
+```
+
+Das Image lädst du in Amazon ECR hoch und legst damit eine Lambda Function an, etwa mit AWS CDK. Wie das geht, zeigt der Workshop AWS Serverless.
 
 ## Zum Nachdenken
 

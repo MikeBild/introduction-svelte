@@ -1,6 +1,6 @@
 # Übung 09 – Events und Formulare
 
-**Folien:** Abschnitte „Props und Events“ und „Form Actions“ · **Schwierigkeit:** ★★★☆☆
+**Workshop:** Lektion „Ein Formular, ein Schema, Fehler am Feld“ · **Folien:** Abschnitte „Props und Events“ und „Form Actions“ · **Schwierigkeit:** ★★★☆☆
 
 Du baust das Bestellformular im Browser. Es prüft die Eingaben mit demselben zod-Schema wie die Form Action auf dem Server und zeigt Fehler direkt am Feld.
 

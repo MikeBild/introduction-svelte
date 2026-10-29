@@ -1,6 +1,6 @@
 # Übung 10 – Testen aus Sicht der Nutzer
 
-**Folien:** Lektion „Testing“ im Workshop · **Schwierigkeit:** ★★★☆☆
+**Workshop:** Lektion „Teste Svelte so, wie Nutzer es bedienen“ · **Schwierigkeit:** ★★★☆☆
 
 Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar für das Bestellformular aus Übung 09. Du nutzt Vitest mit der Testing Library: Sie findet Elemente so, wie Nutzer sie sehen, also über Rolle und Beschriftung.
 
@@ -12,7 +12,7 @@ Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar f�
 
 ## Aufgaben
 
-1. Bestell zwei Akkuschrauber und prüfe, was `onorder` bekommt.
+1. Bestelle zwei Akkuschrauber und prüfe, was `onorder` bekommt.
 2. Tippe die Menge 0 und prüfe die Meldung am Feld über `aria-invalid` und `aria-describedby`.
 3. Leere das Feld und prüfe, dass nichts bestellt wird.
 
