@@ -32,5 +32,5 @@ export async function placeOrder({ request }: { request: Request }) {
 	//         Ergebnis `null` → `fail(409, { error: 'Zu wenig auf Lager. Wähle eine kleinere Menge oder ein anderes Produkt.' })`.
 	// TODO 5: Erfolg → `redirect(303, `/orders/${order.id}`)`.
 	void request;
-	return fail(501, { error: 'Noch nicht umgesetzt' });
+	return fail(501, { error: 'placeOrder ist noch nicht umgesetzt. Bearbeite TODO 3 bis 5 in orders.server.ts.' });
 }

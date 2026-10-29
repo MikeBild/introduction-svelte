@@ -2,7 +2,7 @@
 
 **Workshop:** Lektion „Teste Svelte so, wie Nutzer es bedienen“ · **Schwierigkeit:** ★★★☆☆
 
-Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar für das Bestellformular aus Übung 09. Du nutzt Vitest mit der Testing Library: Sie findet Elemente so, wie Nutzer sie sehen, also über Rolle und Beschriftung.
+Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar für das Bestellformular aus Übung 09. Du nutzt Vitest mit der Testing Library. Die findet Elemente so, wie Nutzer sie sehen, also über Rolle und Beschriftung.
 
 ## Dateien
 

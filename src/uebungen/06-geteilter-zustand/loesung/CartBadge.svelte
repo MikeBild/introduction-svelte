@@ -7,4 +7,4 @@
 </script>
 
 <a href="/cart">Warenkorb ({cart.count}) · {euro(cart.total)}</a>
-{#if !$online}<p role="status">Offline – Bestellungen werden später gesendet</p>{/if}
+{#if !$online}<p role="status">Offline – bestellen kannst du wieder, sobald du online bist.</p>{/if}

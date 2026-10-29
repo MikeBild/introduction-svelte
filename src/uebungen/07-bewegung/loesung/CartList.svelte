@@ -16,6 +16,6 @@
 			<button onclick={() => cart.remove(item.productId)}>Entfernen</button>
 		</li>
 	{:else}
-		<li>Der Warenkorb ist leer.</li>
+		<li>Der Warenkorb ist leer. Unter „Produkte“ legst du etwas hinein.</li>
 	{/each}
 </ul>

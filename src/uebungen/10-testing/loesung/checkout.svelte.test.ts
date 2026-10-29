@@ -38,7 +38,7 @@ it('zeigt eine ungültige Menge am Feld', async () => {
 
 	expect(onorder).not.toHaveBeenCalled();
 	expect(quantity.getAttribute('aria-invalid')).toBe('true');
-	const message = screen.getByText('Bitte eine ganze Zahl ab 1');
+	const message = screen.getByText('Gib eine ganze Zahl ab 1 ein.');
 	expect(quantity.getAttribute('aria-describedby')).toBe(message.id);
 });
 
@@ -49,5 +49,5 @@ it('meldet ein leeres Feld als Fehler', async () => {
 	await user.click(submit);
 
 	expect(onorder).not.toHaveBeenCalled();
-	expect(screen.getByText('Bitte eine ganze Zahl ab 1')).toBeTruthy();
+	expect(screen.getByText('Gib eine ganze Zahl ab 1 ein.')).toBeTruthy();
 });

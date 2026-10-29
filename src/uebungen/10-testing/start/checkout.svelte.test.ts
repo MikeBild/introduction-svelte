@@ -28,7 +28,7 @@ it('zeigt eine ungültige Menge am Feld', async () => {
 	// TODO 2: Tippe die Menge 0 und klicke auf „Bestellen“. Erwarte:
 	//         - `onorder` wurde nicht aufgerufen
 	//         - das Feld hat `aria-invalid="true"`
-	//         - `aria-describedby` zeigt auf die Meldung „Bitte eine ganze Zahl ab 1“
+	//         - `aria-describedby` zeigt auf die Meldung „Gib eine ganze Zahl ab 1 ein.“
 	void user;
 	void onorder;
 	void screen;

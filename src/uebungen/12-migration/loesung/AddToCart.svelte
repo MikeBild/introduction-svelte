@@ -14,9 +14,9 @@
 </script>
 
 <h3>{product.name}</h3>
-<button aria-label="weniger" onclick={() => quantity--} disabled={quantity <= 1}>−</button>
+<button aria-label="Menge verringern" onclick={() => quantity--} disabled={quantity <= 1}>−</button>
 <span data-testid="menge">{quantity}</span>
-<button aria-label="mehr" onclick={() => quantity++}>+</button>
+<button aria-label="Menge erhöhen" onclick={() => quantity++}>+</button>
 <p>Summe: {euro(total)}</p>
 {@render hint?.()}
 <button onclick={() => onadd({ product, quantity })}>In den Warenkorb</button>
