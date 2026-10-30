@@ -4,7 +4,7 @@ export class ProductFilter {
 	query = $state('');
 	onlyInStock = $state(false);
 
-	// Mehrere Zeilen Logik – trotzdem ein abgeleiteter Wert ohne Seiteneffekt.
+	// Mehrere Zeilen Logik – trotzdem ein abgeleiteter Wert ohne Side Effect.
 	visible = $derived.by(() => {
 		const q = this.query.trim().toLowerCase();
 		return this.#products().filter(
