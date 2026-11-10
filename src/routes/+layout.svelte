@@ -1,12 +1,12 @@
 <script lang="ts">
-	// Die App setzt sich aus den Lösungen der Übungen zusammen.
+	// The app is assembled from the reference solutions of the exercises.
 	import { Cart, setCart } from '#lib/cart.svelte.js';
 	import CartBadge from '#uebungen/06-geteilter-zustand/loesung/CartBadge.svelte';
 	import CartTitle from '#uebungen/03-ableiten-effekte/loesung/CartTitle.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
-	// Pro Request ein eigener Warenkorb – über Context, nicht als Modul-Variable.
+	// One cart per request – via Context, not as a module variable.
 	const cart = setCart(new Cart());
 </script>
 

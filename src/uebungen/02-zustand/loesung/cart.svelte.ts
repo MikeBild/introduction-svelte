@@ -1,7 +1,7 @@
 import type { OrderItem, Product } from '#lib/shop.js';
 
 export class Cart {
-	// Deep State: Svelte hüllt das Array und jede Position in einen Proxy.
+	// Deep state: Svelte wraps the array and every line item in a proxy.
 	items = $state<OrderItem[]>([]);
 
 	add(product: Product) {
@@ -10,7 +10,7 @@ export class Cart {
 		else this.items.push({ productId: product.id, quantity: 1, priceCents: product.priceCents });
 	}
 
-	/** Eine einfache Kopie ohne Proxy – z. B. vor dem Senden oder Loggen. */
+	/** A plain copy without a proxy – e.g. before sending or logging. */
 	snapshot(): OrderItem[] {
 		return $state.snapshot(this.items);
 	}

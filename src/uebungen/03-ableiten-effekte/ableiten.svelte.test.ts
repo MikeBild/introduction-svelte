@@ -7,8 +7,8 @@ import CartTitle from './loesung/CartTitle.svelte';
 
 const [hammer, schrauber, wasserwaage, akkuschrauber] = sampleProducts;
 
-describe('03 Ableiten – Cart', () => {
-	it('berechnet Summe und Anzahl', () => {
+describe('03 Deriving – Cart', () => {
+	it('computes total and count', () => {
 		const cart = new Cart();
 		cart.add(hammer);
 		cart.add(hammer);
@@ -17,7 +17,7 @@ describe('03 Ableiten – Cart', () => {
 		expect(cart.count).toBe(3);
 	});
 
-	it('rechnet nach dem Entfernen neu', () => {
+	it('recomputes after removing', () => {
 		const cart = new Cart();
 		cart.add(hammer);
 		cart.add(schrauber);
@@ -28,19 +28,19 @@ describe('03 Ableiten – Cart', () => {
 	});
 });
 
-describe('03 Ableiten – ProductFilter mit $derived.by', () => {
-	it('zeigt ohne Suche alle Produkte', () => {
+describe('03 Deriving – ProductFilter with $derived.by', () => {
+	it('shows all products without a search', () => {
 		const filter = new ProductFilter(() => sampleProducts);
 		expect(filter.visible).toHaveLength(sampleProducts.length);
 	});
 
-	it('filtert nach Namen, ohne Groß-/Kleinschreibung', () => {
+	it('filters by name, case-insensitive', () => {
 		const filter = new ProductFilter(() => sampleProducts);
 		filter.query = '  SCHRAUB ';
 		expect(filter.visible.map((p) => p.id)).toEqual([schrauber.id, akkuschrauber.id]);
 	});
 
-	it('blendet auf Wunsch Ausverkauftes aus', () => {
+	it('hides sold-out products on request', () => {
 		const filter = new ProductFilter(() => sampleProducts);
 		filter.onlyInStock = true;
 		expect(filter.visible.map((p) => p.id)).not.toContain(wasserwaage.id);
@@ -48,8 +48,8 @@ describe('03 Ableiten – ProductFilter mit $derived.by', () => {
 	});
 });
 
-describe('03 Effekte – CartTitle', () => {
-	it('hält den Tab-Titel aktuell', () => {
+describe('03 Effects – CartTitle', () => {
+	it('keeps the tab title up to date', () => {
 		const cart = new Cart();
 		const app = mount(CartTitle, { target: document.body, props: { cart } });
 		flushSync();

@@ -13,31 +13,31 @@ const setup = () => {
 	return { user, onorder };
 };
 
-it('bestellt das gewählte Produkt in der eingegebenen Menge', async () => {
+it('orders the selected product in the entered quantity', async () => {
 	const { user, onorder } = setup();
-	// TODO 1: Wähle mit `user.selectOptions(screen.getByLabelText('Produkt'), 'Akkuschrauber')`
-	//         ein Produkt, tippe die Menge 2 ins Feld „Menge“ und klicke auf „Bestellen“.
-	//         Erwarte, dass `onorder` mit `{ customerId: 'c-1', items: [{ productId: 'p-4', quantity: 2 }] }` aufgerufen wurde.
+	// TODO 1: Use `user.selectOptions(screen.getByLabelText('Produkt'), 'Akkuschrauber')` to select
+	//         a product, type the quantity 2 into the field “Menge” (quantity), and click “Bestellen” (order).
+	//         Expect `onorder` to have been called with `{ customerId: 'c-1', items: [{ productId: 'p-4', quantity: 2 }] }`.
 	void user;
 	void onorder;
 	expect.unreachable('TODO 1 ist noch offen');
 });
 
-it('zeigt eine ungültige Menge am Feld', async () => {
+it('shows an invalid quantity at the field', async () => {
 	const { user, onorder } = setup();
-	// TODO 2: Tippe die Menge 0 und klicke auf „Bestellen“. Erwarte:
-	//         - `onorder` wurde nicht aufgerufen
-	//         - das Feld hat `aria-invalid="true"`
-	//         - `aria-describedby` zeigt auf die Meldung „Gib eine ganze Zahl ab 1 ein.“
+	// TODO 2: Type the quantity 0 and click “Bestellen”. Expect:
+	//         - `onorder` was not called
+	//         - the field has `aria-invalid="true"`
+	//         - `aria-describedby` points to the message “Gib eine ganze Zahl ab 1 ein.” (enter a whole number of at least 1)
 	void user;
 	void onorder;
 	void screen;
 	expect.unreachable('TODO 2 ist noch offen');
 });
 
-it('meldet ein leeres Feld als Fehler', async () => {
-	// TODO 3: Leere das Feld „Menge“ mit `user.clear`, schick das Formular ab und
-	//         prüfe, dass die Meldung erscheint und `onorder` nicht aufgerufen wurde.
+it('reports an empty field as an error', async () => {
+	// TODO 3: Clear the field “Menge” with `user.clear`, submit the form, and
+	//         check that the message appears and `onorder` was not called.
 	setup();
 	expect.unreachable('TODO 3 ist noch offen');
 });

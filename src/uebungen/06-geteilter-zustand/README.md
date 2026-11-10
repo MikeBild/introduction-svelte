@@ -1,30 +1,32 @@
-# Übung 06 – Geteilter Zustand
+*English · [Deutsch](README.de.md)*
 
-**Folien:** Abschnitt „Geteilter Zustand“ · **Schwierigkeit:** ★★★★☆
+# Exercise 06 – Shared state
 
-Produktliste, Warenkorb und Kopfzeile teilen sich einen Warenkorb. Du stellst ihn per Context bereit und zeigst ihn in einem Badge an. Dazu kommt ein Store für den Online-Status.
+**Slides:** section “Shared state” · **Difficulty:** ★★★★☆
 
-## Dateien
+The product list, the cart, and the header share one cart. You provide it via Context and show it in a badge. On top of that comes a store for the online status.
 
-- `start/cart-context.ts` – `getCart` und `setCart`
-- `start/online.ts` – `readable`-Store
-- `start/CartBadge.svelte` – Anzeige in der Kopfzeile
-- `CartHarness.svelte` – Testhilfe, macht dasselbe wie `src/routes/+layout.svelte`
+## Files
 
-## Aufgaben
+- `start/cart-context.ts` – `getCart` and `setCart`
+- `start/online.ts` – `readable` store
+- `start/CartBadge.svelte` – display in the header
+- `CartHarness.svelte` – test helper, does the same as `src/routes/+layout.svelte`
 
-1. Erzeuge mit `createContext<Cart>()` ein typisiertes Paar und exportiere es als `getCart` und `setCart`.
-2. `online`: Setze den Wert auf `navigator.onLine` und aktualisiere ihn bei den window-Events `online` und `offline`. Entferne die Listener wieder. Beim Server-Side Rendering (SSR) gibt es kein `window`.
-3. `CartBadge`: Hole den Warenkorb mit `getCart()` und zeig Anzahl und Summe: `Warenkorb (2) · 39,80 €`.
-4. Zeig `<p role="status">Offline – …</p>` nur, wenn `$online` false ist.
+## Tasks
 
-## Prüfen
+1. Create a typed pair with `createContext<Cart>()` and export it as `getCart` and `setCart`.
+2. `online`: Set the value to `navigator.onLine` and update it on the window events `online` and `offline`. Remove the listeners again. During server-side rendering (SSR), there is no `window`.
+3. `CartBadge`: Get the cart with `getCart()` and show count and total: `Warenkorb (2) · 39,80 €` (cart (2) · €39.80).
+4. Show `<p role="status">Offline – …</p>` only when `$online` is false.
+
+## Check
 
 ```bash
 npm run test:start -- 06
 ```
 
-## Zum Nachdenken
+## Think about it
 
-- Warum ist ein exportierter `const cart = new Cart()` in SvelteKit gefährlich? (Folie „Warum Context und kein globales Modul“)
-- Wie würdest du `online` als Klasse mit `$state` und `$effect` schreiben? Wann ist der Store die bessere Wahl?
+- Why is an exported `const cart = new Cart()` dangerous in SvelteKit? (slide “Why Context and not a global module”)
+- How would you write `online` as a class with `$state` and `$effect`? When is the store the better choice?

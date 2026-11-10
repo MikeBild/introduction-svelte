@@ -2,7 +2,7 @@ import { totalCents, type OrderItem, type Product, type ProductId } from '#lib/s
 
 export class Cart {
 	items = $state<OrderItem[]>([]);
-	// Abgeleitet: immer aktuell, niemand muss sie setzen.
+	// Derived: always up to date, nobody has to set them.
 	total = $derived(totalCents(this.items));
 	count = $derived(this.items.reduce((sum, item) => sum + item.quantity, 0));
 

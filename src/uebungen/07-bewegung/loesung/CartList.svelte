@@ -6,7 +6,7 @@
 	import { productName } from '#lib/shop.js';
 
 	const cart = getCart();
-	// Bewegung mit Rücksicht: bei reduzierter Bewegung keine Wege, keine Dauer.
+	// Motion with care: with reduced motion, no distance and no duration.
 	let duration = $derived(prefersReducedMotion.current ? 0 : 200);
 </script>
 

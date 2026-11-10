@@ -1,4 +1,4 @@
-// Eine In-Memory-„Datenbank“. Nur auf dem Server importierbar (#lib/server/…).
+// An in-memory “database”. Can only be imported on the server (#lib/server/…).
 import {
 	customerId,
 	orderId,
@@ -14,7 +14,7 @@ function createDb() {
 	let nextId = 1;
 
 	const db = {
-		/** Setzt die Daten auf die Beispieldaten zurück – praktisch für Tests. */
+		/** Resets the data to the sample data – handy for tests. */
 		reset() {
 			products = structuredClone(sampleProducts);
 			orders = [];
@@ -30,7 +30,7 @@ function createDb() {
 		async orders(): Promise<Order[]> {
 			return structuredClone(orders);
 		},
-		/** Legt eine Bestellung an – oder liefert `null`, wenn ein Produkt fehlt oder der Bestand nicht reicht. */
+		/** Creates an order – or returns `null` if a product is missing or the stock is not enough. */
 		async placeOrder(input: PlaceOrderInput): Promise<Order | null> {
 			const lines = input.items.map((item) => ({
 				item,

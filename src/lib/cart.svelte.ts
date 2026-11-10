@@ -1,6 +1,6 @@
-// Der Warenkorb für die App unter src/routes und für die Übungen 07 und 08.
-// Er setzt sich aus den Lösungen zusammen:
-//   Cart                – Übung 02 (Zustand) und 03 (Ableiten)
-//   getCart / setCart   – Übung 06 (Context)
+// The cart for the app under src/routes and for exercises 07 and 08.
+// It is assembled from the reference solutions:
+//   Cart                – exercises 02 (state) and 03 (deriving)
+//   getCart / setCart   – exercise 06 (Context)
 export { Cart } from '#uebungen/03-ableiten-effekte/loesung/cart.svelte.js';
 export { getCart, setCart } from '#uebungen/06-geteilter-zustand/loesung/cart-context.js';

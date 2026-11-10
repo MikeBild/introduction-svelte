@@ -1,5 +1,5 @@
-// Der Werkstatt-Shop – reines TypeScript, ohne Svelte.
-// Alle Übungen und die App unter src/routes bauen darauf auf.
+// The workshop shop – plain TypeScript, without Svelte.
+// All exercises and the app under src/routes build on it.
 
 export type ProductId = string & { readonly __brand: 'ProductId' };
 export type OrderId = string & { readonly __brand: 'OrderId' };
@@ -23,7 +23,7 @@ export const totalCents = (items: OrderItem[]) =>
 export const euro = (cents: number) =>
 	(cents / 100).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
 
-/** Lesbare Bezeichnungen für den Bestellstatus – zentral für alle Ansichten. */
+/** Readable labels for the order status – in one place for all views. */
 export const orderStatusLabel: Record<OrderStatus, string> = {
 	draft: 'Entwurf',
 	placed: 'Bestellt',
@@ -32,7 +32,7 @@ export const orderStatusLabel: Record<OrderStatus, string> = {
 	cancelled: 'Storniert'
 };
 
-/** Produktname statt ID wie „p-1“ in der Oberfläche. Unbekannte IDs bleiben sichtbar. */
+/** Product name instead of an ID like “p-1” in the UI. Unknown IDs stay visible. */
 export const productName = (id: string, products: Product[] = sampleProducts) =>
 	products.find((p) => p.id === id)?.name ?? id;
 
@@ -40,7 +40,7 @@ export const productId = (id: string) => id as ProductId;
 export const orderId = (id: string) => id as OrderId;
 export const customerId = (id: string) => id as CustomerId;
 
-/** Beispieldaten für Übungen und Tests */
+/** Sample data for exercises and tests */
 export const sampleProducts: Product[] = [
 	{ id: productId('p-1'), name: 'Hammer', priceCents: 1990, stock: 12 },
 	{ id: productId('p-2'), name: 'Schraubendreher-Set', priceCents: 2490, stock: 5 },

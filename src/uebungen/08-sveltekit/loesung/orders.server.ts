@@ -1,27 +1,27 @@
-// Load-Funktionen und Form Action für die Routen unter src/routes.
-// Die Routen-Dateien (+page.server.ts) rufen diese Funktionen nur auf.
+// Load functions and Form Action for the routes under src/routes.
+// The route files (+page.server.ts) only call these functions.
 import { error, fail, redirect } from '@sveltejs/kit';
 import { db } from '#lib/server/db.js';
 import { PlaceOrderInput } from '#lib/schema.js';
 
-/** load für /products */
+/** load for /products */
 export async function loadProducts() {
 	return { products: await db.products() };
 }
 
-/** load für /orders */
+/** load for /orders */
 export async function loadOrders() {
 	return { orders: await db.orders(), products: await db.products() };
 }
 
-/** load für /orders/[id] – unbekannte IDs werden zu 404 */
+/** load for /orders/[id] – unknown IDs become 404 */
 export async function loadOrder({ params }: { params: { id: string } }) {
 	const order = await db.order(params.id);
 	if (!order) error(404, 'Diese Bestellung gibt es nicht. Wähle eine aus der Bestellliste.');
 	return { order };
 }
 
-/** Form Action „bestellen“ für /orders */
+/** Form Action “order” for /orders */
 export async function placeOrder({ request }: { request: Request }) {
 	const form = await request.formData();
 	const input = PlaceOrderInput.safeParse({

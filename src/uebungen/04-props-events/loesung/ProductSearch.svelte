@@ -28,7 +28,7 @@
 {/each}
 
 <style>
-	/* Nur für Screenreader sichtbar: Das Feld hat trotzdem eine echte Beschriftung. */
+	/* Visible to screen readers only: the field still has a real label. */
 	.visually-hidden {
 		position: absolute;
 		width: 1px;

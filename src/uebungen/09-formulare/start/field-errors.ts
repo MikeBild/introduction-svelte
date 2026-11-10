@@ -1,12 +1,12 @@
 import type { z } from 'zod';
 
-// Texte für Nutzende stehen in der Oberfläche, nicht im Schema.
+// Texts for users live in the UI, not in the schema.
 const messages: Record<string, string> = {
 	quantity: 'Gib eine ganze Zahl ab 1 ein.',
 	productId: 'Wähle ein Produkt.'
 };
 
-/** Macht aus zod-Issues ein Objekt „Pfad → Meldung“, z. B. `items.0.quantity`. */
+/** Turns zod issues into an object “path → message”, e.g. `items.0.quantity`. */
 export const toFieldErrors = (issues: readonly z.core.$ZodIssue[]): Record<string, string> =>
 	Object.fromEntries(
 		issues.map((issue) => [

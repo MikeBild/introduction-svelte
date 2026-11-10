@@ -1,29 +1,31 @@
-# Übung 12 – Von Svelte 4 zu Svelte 5 migrieren
+*English · [Deutsch](README.de.md)*
 
-**Folien:** Abschnitt „Was sich gegenüber Svelte 4 geändert hat“ · **Schwierigkeit:** ★★★☆☆
+# Exercise 12 – Migrating from Svelte 4 to Svelte 5
 
-`start/AddToCart.svelte` ist in Svelte-4-Syntax geschrieben und läuft dank `<svelte:options runes={false} />` im Legacy-Modus. Du migrierst die Komponente Schritt für Schritt zu Runes, Callback-Props und Snippets.
+**Slides:** section “What changed compared to Svelte 4” · **Difficulty:** ★★★☆☆
 
-## Aufgaben
+`start/AddToCart.svelte` is written in Svelte 4 syntax and runs in non-runes mode thanks to `<svelte:options runes={false} />`. You migrate the component step by step to runes, callback props, and snippets.
 
-1. Entferne `<svelte:options runes={false} />`.
-2. `export let product` → `let { product, onadd, hint } = $props()` mit einem Typ `Props`.
+## Tasks
+
+1. Remove `<svelte:options runes={false} />`.
+2. `export let product` → `let { product, onadd, hint } = $props()` with a `Props` type.
 3. `let quantity = 1` → `$state(1)`, `$: total = …` → `$derived(…)`.
 4. `on:click` → `onclick`.
-5. `createEventDispatcher` → Callback-Prop `onadd({ product, quantity })`.
-6. `<slot name="hint" />` → Snippet-Prop `hint` mit `{@render hint?.()}`.
+5. `createEventDispatcher` → callback prop `onadd({ product, quantity })`.
+6. `<slot name="hint" />` → snippet prop `hint` with `{@render hint?.()}`.
 
-Den Großteil erledigt auch das Migrationsskript: `npx sv migrate svelte-5`. Probiere es auf einer Kopie aus und vergleiche das Ergebnis mit deinem. Callback-Props statt `createEventDispatcher` musst du meist selbst umbauen.
+The migration script also does most of the work: `npx sv migrate svelte-5`. Try it on a copy and compare the result with yours. You usually have to switch from `createEventDispatcher` to callback props yourself.
 
-## Prüfen
+## Check
 
 ```bash
 npm run test:start -- 12
 ```
 
-Am Anfang besteht nur der erste Test: Das Verhalten stimmt schon, die Syntax noch nicht.
+At the start, only the first test passes: the behavior is already right, the syntax is not yet.
 
-## Zum Nachdenken
+## Think about it
 
-- Warum kannst du eine große Anwendung Komponente für Komponente migrieren?
-- Was ändert sich für Aufrufer, wenn aus `on:add` eine Prop `onadd` wird?
+- Why can you migrate a large application component by component?
+- What changes for callers when `on:add` becomes an `onadd` prop?

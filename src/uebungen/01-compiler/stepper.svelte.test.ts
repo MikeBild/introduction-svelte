@@ -22,13 +22,13 @@ describe('01 Compiler – Stepper', () => {
 		};
 	};
 
-	it('startet mit Menge 1 und der Summe eines Stücks', () => {
+	it('starts with quantity 1 and the total of one item', () => {
 		const ui = setup();
 		expect(ui.menge()).toBe('1');
 		expect(ui.summe()).toBe(`Summe: ${euro(4990)}`);
 	});
 
-	it('erhöht Menge und Summe per Klick', () => {
+	it('increases quantity and total on click', () => {
 		const ui = setup();
 		ui.mehr.click();
 		ui.mehr.click();
@@ -37,7 +37,7 @@ describe('01 Compiler – Stepper', () => {
 		expect(ui.summe()).toBe(`Summe: ${euro(3 * 4990)}`);
 	});
 
-	it('lässt die Menge nicht unter 1 fallen', () => {
+	it('does not let the quantity drop below 1', () => {
 		const ui = setup();
 		expect(ui.weniger.disabled).toBe(true);
 		ui.mehr.click();

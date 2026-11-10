@@ -1,33 +1,35 @@
-# Übung 10 – Testen aus Sicht der Nutzenden
+*English · [Deutsch](README.de.md)*
 
-**Workshop:** Lektion „Teste Svelte so, wie Nutzende es bedienen“ · **Schwierigkeit:** ★★★☆☆
+# Exercise 10 – Testing from the users’ point of view
 
-Bisher hast du Tests nur ausgeführt. Jetzt schreibst du sie selbst, und zwar für das Bestellformular aus Übung 09. Du nutzt Vitest mit der Testing Library. Die findet Elemente so, wie Nutzende sie sehen, also über Rolle und Beschriftung.
+**Workshop:** lesson “Test Svelte the way users use it” · **Difficulty:** ★★★☆☆
 
-## Dateien
+So far you have only run tests. Now you write them yourself, for the order form from exercise 09. You use Vitest with the Testing Library. It finds elements the way users see them, by role and label.
 
-- `start/checkout.svelte.test.ts` – hier schreibst du die Tests
-- `loesung/checkout.svelte.test.ts` – zum Vergleichen
-- Getestet wird `#uebungen/09-formulare/loesung/CheckoutForm.svelte`
+## Files
 
-## Aufgaben
+- `start/checkout.svelte.test.ts` – this is where you write the tests
+- `loesung/checkout.svelte.test.ts` – for comparison
+- Under test: `#uebungen/09-formulare/loesung/CheckoutForm.svelte`
 
-1. Bestelle zwei Akkuschrauber und prüfe, was `onorder` bekommt.
-2. Tippe die Menge 0 und prüfe die Meldung am Feld über `aria-invalid` und `aria-describedby`.
-3. Leere das Feld und prüfe, dass nichts bestellt wird.
+## Tasks
 
-Finde Elemente mit `getByRole` und `getByLabelText`, nicht mit CSS-Selektoren. Für Eingaben nutzt du `userEvent.setup()`, denn das löst dieselben Events aus wie echte Nutzende.
+1. Order two “Akkuschrauber” (cordless drill) and check what `onorder` receives.
+2. Type the quantity 0 and check the message at the field via `aria-invalid` and `aria-describedby`.
+3. Clear the field and check that nothing is ordered.
 
-## Prüfen
+Find elements with `getByRole` and `getByLabelText`, not with CSS selectors. For input, you use `userEvent.setup()`, because it fires the same events as real users.
+
+## Check
 
 ```bash
 npm run test:start -- 10
 ```
 
-Am Anfang schlagen die drei Tests mit `TODO … ist noch offen` fehl.
+At the start, the three tests fail with `TODO … ist noch offen` (TODO … is still open).
 
-## Zum Nachdenken
+## Think about it
 
-- Die Tests der Übungen 01 bis 09 nutzen `mount` aus `svelte` und `querySelector`. Was ist mit der Testing Library lesbarer, was wird umständlicher?
-- Welcher deiner Tests schlägt fehl, wenn jemand das `<label>` am Mengenfeld löscht? Ist das gut so?
-- Wie testest du `Cart` aus `#lib/cart.svelte.ts` ganz ohne Komponente? Tipp: Die Datei muss auf `.svelte.test.ts` enden.
+- The tests of exercises 01 to 09 use `mount` from `svelte` and `querySelector`. What is more readable with the Testing Library, and what gets more cumbersome?
+- Which of your tests fails if someone deletes the `<label>` on the quantity field? Is that a good thing?
+- How do you test `Cart` from `#lib/cart.svelte.ts` without any component? Tip: the file name must end in `.svelte.test.ts`.

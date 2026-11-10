@@ -3,9 +3,9 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, type Plugin } from 'vitest/config';
 
 /**
- * `npm run test:start` startet Vitest im Modus „start“.
- * Dann zeigen alle relativen Importe `./loesung/…` auf `./start/…` –
- * dieselben Tests prüfen also deinen eigenen Code.
+ * `npm run test:start` runs Vitest in “start” mode.
+ * Then all relative imports `./loesung/…` point to `./start/…` –
+ * so the same tests check your own code.
  */
 function uebungsModus(mode: string): Plugin {
 	return {
@@ -21,8 +21,8 @@ function uebungsModus(mode: string): Plugin {
 	}
 
 	export default defineConfig(({ mode }) => {
-		// Tests, die du selbst schreibst (Übung 10), liegen in start/ und loesung/.
-		// Normal laufen die aus loesung/, im Modus „start“ deine aus start/.
+		// Tests you write yourself (exercise 10) live in start/ and loesung/.
+		// Normally the ones in loesung/ run; in “start” mode, yours in start/ run.
 		const andere = mode === 'start' ? 'loesung' : 'start';
 		const ohne = [`src/uebungen/*/${andere}/**`];
 		return {
@@ -30,7 +30,7 @@ function uebungsModus(mode: string): Plugin {
 			uebungsModus(mode),
 			sveltekit({
 				compilerOptions: {
-					// Runes überall erzwingen, außer in Bibliotheken
+					// Force runes everywhere except in libraries
 					runes: ({ filename }) =>
 						filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 				},

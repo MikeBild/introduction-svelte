@@ -1,7 +1,7 @@
 import type { Cart } from '#lib/cart.svelte.js';
 
-// TODO 1: Erzeuge mit `createContext<Cart>()` aus 'svelte' ein typisiertes Paar
-//         und exportiere es als `getCart` und `setCart`.
+// TODO 1: Create a typed pair with `createContext<Cart>()` from 'svelte'
+//         and export it as `getCart` and `setCart`.
 export const getCart = (): Cart => {
 	throw new Error('getCart ist noch nicht umgesetzt');
 };

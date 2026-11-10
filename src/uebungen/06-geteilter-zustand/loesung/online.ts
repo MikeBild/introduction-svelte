@@ -1,8 +1,8 @@
 import { readable } from 'svelte/store';
 
-// Ein Store für eine externe Quelle: den Online-Status des Browsers.
+// A store for an external source: the browser's online status.
 export const online = readable(true, (set) => {
-	if (typeof window === 'undefined') return; // beim Server-Side Rendering gibt es kein window
+	if (typeof window === 'undefined') return; // there is no window during server-side rendering
 	const update = () => set(navigator.onLine);
 	update();
 	window.addEventListener('online', update);

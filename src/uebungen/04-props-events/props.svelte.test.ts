@@ -25,33 +25,33 @@ const type = (input: HTMLInputElement, value: string) => {
 };
 
 describe('04 Props – ProductCard', () => {
-	it('zeigt Name und Preis', () => {
+	it('shows name and price', () => {
 		const body = show(mount(ProductCard, { target, props: { product: hammer, onadd: () => {} } }));
 		expect(body.querySelector('h3')?.textContent).toBe('Hammer');
 		expect(body.querySelector('p')?.textContent).toContain('19,90');
 	});
 
-	it('meldet den Klick über die Callback-Prop onadd', () => {
+	it('reports the click via the callback prop onadd', () => {
 		const onadd = vi.fn<(product: Product) => void>();
 		const body = show(mount(ProductCard, { target, props: { product: hammer, onadd } }));
 		body.querySelector('button')!.click();
 		expect(onadd).toHaveBeenCalledWith(hammer);
 	});
 
-	it('deaktiviert den Button bei Bestand 0', () => {
+	it('disables the button when stock is 0', () => {
 		const body = show(mount(ProductCard, { target, props: { product: wasserwaage, onadd: () => {} } }));
 		expect(body.querySelector('button')!.disabled).toBe(true);
 	});
 
-	it('rendert children', () => {
+	it('renders children', () => {
 		const children = createRawSnippet(() => ({ render: () => '<small>Ausverkauft</small>' }));
 		const body = show(mount(ProductCard, { target, props: { product: wasserwaage, onadd: () => {}, children } }));
 		expect(body.querySelector('small')?.textContent).toBe('Ausverkauft');
 	});
 });
 
-describe('04 Props – QuantityInput mit $bindable', () => {
-	it('gibt die Eingabe an den Aufrufer zurück', () => {
+describe('04 Props – QuantityInput with $bindable', () => {
+	it('passes the input back to the caller', () => {
 		const body = show(mount(QuantityHarness, { target }));
 		type(body.querySelector('input')!, '3');
 		expect(body.querySelector('p')?.textContent).toBe('Gewählt: 3');
@@ -59,7 +59,7 @@ describe('04 Props – QuantityInput mit $bindable', () => {
 });
 
 describe('04 Bindings – ProductSearch', () => {
-	it('filtert über das gebundene Suchfeld', () => {
+	it('filters via the bound search field', () => {
 		const body = show(mount(ProductSearch, { target, props: { products: sampleProducts, onadd: () => {} } }));
 		expect(body.querySelector('p')?.textContent).toBe('4 Treffer');
 		const search = body.querySelector<HTMLInputElement>('#product-search')!;
@@ -68,7 +68,7 @@ describe('04 Bindings – ProductSearch', () => {
 		expect(body.querySelector('p')?.textContent).toBe('2 Treffer');
 	});
 
-	it('blendet über die Checkbox Ausverkauftes aus', () => {
+	it('hides sold-out products via the checkbox', () => {
 		const body = show(mount(ProductSearch, { target, props: { products: sampleProducts, onadd: () => {} } }));
 		body.querySelector<HTMLInputElement>('input[type="checkbox"]')!.click();
 		flushSync();

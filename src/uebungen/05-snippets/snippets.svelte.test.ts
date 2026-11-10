@@ -22,33 +22,33 @@ const cells = () =>
 	);
 
 describe('05 Snippets – ProductTable', () => {
-	it('rendert je Produkt das Snippet row', () => {
+	it('renders the row snippet for each product', () => {
 		app = mount(ProductTable, { target: document.body, props: { products: sampleProducts, row } });
 		flushSync();
 		expect(cells()).toEqual(sampleProducts.map((p) => [p.name]));
 	});
 
-	it('rendert empty bei leerer Liste', () => {
+	it('renders empty for an empty list', () => {
 		app = mount(ProductTable, { target: document.body, props: { products: [], row, empty } });
 		flushSync();
 		expect(document.body.querySelector('td span')?.textContent).toBe('leer');
 	});
 
-	it('bleibt ohne empty-Snippet stabil', () => {
+	it('stays stable without an empty snippet', () => {
 		app = mount(ProductTable, { target: document.body, props: { products: [], row } });
 		flushSync();
 		expect(document.body.querySelectorAll('tr')).toHaveLength(1);
 	});
 });
 
-describe('05 Snippets – PriceList als Aufrufer', () => {
-	it('liefert Name und Preis je Zeile', () => {
+describe('05 Snippets – PriceList as the caller', () => {
+	it('provides name and price per row', () => {
 		app = mount(PriceList, { target: document.body, props: { products: sampleProducts } });
 		flushSync();
 		expect(cells()).toEqual(sampleProducts.map((p) => [p.name, euro(p.priceCents)]));
 	});
 
-	it('zeigt einen Hinweis, wenn nichts da ist', () => {
+	it('shows a hint when there is nothing', () => {
 		app = mount(PriceList, { target: document.body, props: { products: [] } });
 		flushSync();
 		expect(document.body.querySelector('td')?.textContent).toBe('Keine Produkte gefunden');

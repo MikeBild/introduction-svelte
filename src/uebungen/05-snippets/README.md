@@ -1,30 +1,32 @@
-# Übung 05 – Snippets
+*English · [Deutsch](README.de.md)*
 
-**Folien:** Abschnitt „Snippets“ · **Schwierigkeit:** ★★★☆☆
+# Exercise 05 – Snippets
 
-Du baust eine Tabelle, die nur die Struktur vorgibt. Den Inhalt jeder Zeile liefert der Aufrufer als Snippet.
+**Slides:** section “Snippets” · **Difficulty:** ★★★☆☆
 
-## Dateien
+You build a table that only defines the structure. The caller provides the content of each row as a snippet.
 
-- `start/ProductTable.svelte` – nimmt die Snippets `row` und `empty` entgegen
-- `start/PriceList.svelte` – der Aufrufer, liefert die Snippets
+## Files
 
-## Aufgaben
+- `start/ProductTable.svelte` – accepts the snippets `row` and `empty`
+- `start/PriceList.svelte` – the caller, provides the snippets
 
-1. Lies `row` und `empty` aus den Props (Typen: `Snippet<[Product]>` und `Snippet`).
-2. Rendere je Produkt `{@render row(product)}` in einer `<tr>`.
-3. Ist die Liste leer, rendere `empty` (falls vorhanden) in einer Zelle. Tipp: `{:else}` im `each`-Block.
-4. `PriceList`: Ergänze im Snippet `row` eine zweite Zelle mit dem Preis.
-5. Ergänze ein Snippet `empty()` mit dem Text „Keine Produkte gefunden“.
+## Tasks
 
-## Prüfen
+1. Read `row` and `empty` from the props (types: `Snippet<[Product]>` and `Snippet`).
+2. For each product, render `{@render row(product)}` in a `<tr>`.
+3. If the list is empty, render `empty` (if present) in a cell. Tip: `{:else}` in the `each` block.
+4. `PriceList`: In the `row` snippet, add a second cell with the price.
+5. Add an `empty()` snippet with the text “Keine Produkte gefunden” (no products found).
+
+## Check
 
 ```bash
 npm run test:start -- 05
 ```
 
-Die Tests von `ProductTable` erzeugen ihre Snippets mit `createRawSnippet`. So testest du eine Komponente ohne eigene Testkomponente.
+The tests of `ProductTable` create their snippets with `createRawSnippet`. This way you test a component without writing a test component of your own.
 
-## Zum Nachdenken
+## Think about it
 
-- Wie hättest du das mit Slots und `let:` in Svelte 4 gelöst?
+- How would you have solved this with slots and `let:` in Svelte 4?

@@ -1,14 +1,14 @@
-// Express 5 vor dem SvelteKit-Handler aus `build/handler.js` (adapter-node).
+// Express 5 in front of the SvelteKit handler from `build/handler.js` (adapter-node).
 import express, { type RequestHandler } from 'express';
 
 export function createApp(svelteKitHandler: RequestHandler) {
 	const app = express();
-	// TODO 1: Schalte den Header `X-Powered-By` mit `app.disable('x-powered-by')` ab.
+	// TODO 1: Turn off the `X-Powered-By` header with `app.disable('x-powered-by')`.
 
-	// TODO 2: Beantworte `GET /healthz` mit `res.json({ ok: true })`.
-	//         Die Route steht vor dem Handler, sonst antwortet SvelteKit mit 404.
+	// TODO 2: Answer `GET /healthz` with `res.json({ ok: true })`.
+	//         The route comes before the handler, otherwise SvelteKit answers with 404.
 
-	// TODO 3: Reiche alle anderen Requests mit `app.use(...)` an `svelteKitHandler` weiter.
+	// TODO 3: Pass all other requests to `svelteKitHandler` with `app.use(...)`.
 	void svelteKitHandler;
 	return app;
 }

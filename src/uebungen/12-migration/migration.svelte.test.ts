@@ -27,7 +27,7 @@ describe('12 Migration – AddToCart', () => {
 		return { onadd, click };
 	};
 
-	it('verhält sich wie vorher: Menge und Summe', () => {
+	it('behaves as before: quantity and total', () => {
 		const ui = setup();
 		ui.click('Menge erhöhen');
 		ui.click('Menge erhöhen');
@@ -35,20 +35,20 @@ describe('12 Migration – AddToCart', () => {
 		expect(document.body.querySelector('p')?.textContent).toBe(`Summe: ${euro(3 * hammer.priceCents)}`);
 	});
 
-	it('meldet das Hinzufügen über die Callback-Prop onadd', () => {
+	it('reports adding via the callback prop onadd', () => {
 		const ui = setup();
 		ui.click('Menge erhöhen');
 		ui.click('In den Warenkorb');
 		expect(ui.onadd).toHaveBeenCalledWith({ product: hammer, quantity: 2 });
 	});
 
-	it('rendert den Hinweis als Snippet', () => {
+	it('renders the hint as a snippet', () => {
 		const hint = createRawSnippet(() => ({ render: () => '<small>Lieferbar in 2 Tagen</small>' }));
 		setup({ hint });
 		expect(document.body.querySelector('small')?.textContent).toBe('Lieferbar in 2 Tagen');
 	});
 
-	it('nutzt nur noch Svelte-5-Syntax', () => {
+	it('uses Svelte 5 syntax only', () => {
 		for (const legacy of ['runes={false}', 'export let', '$:', 'on:click', 'createEventDispatcher', '<slot']) {
 			expect(source, legacy).not.toContain(legacy);
 		}

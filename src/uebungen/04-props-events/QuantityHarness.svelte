@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Testhilfe: bindet die Menge wie ein echter Aufrufer.
+	// Test helper: binds the quantity like a real caller.
 	import QuantityInput from './loesung/QuantityInput.svelte';
 
 	let quantity = $state(1);

@@ -9,11 +9,11 @@ import cartTotalSource from './loesung/CartTotal.svelte?raw';
 
 const [hammer, schrauber] = sampleProducts;
 
-/** Quelltext ohne Kommentare – TODO-Hinweise zählen nicht als Lösung. */
+/** Source without comments – TODO hints do not count as a solution. */
 const code = (source: string) =>
 	source.replace(/<!--[\s\S]*?-->/g, '').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
 
-/** Sammelt alle Direktiven (in:, out:, animate: …) aus dem Markup einer Komponente. */
+/** Collects all directives (in:, out:, animate: …) from a component's markup. */
 function directives(source: string) {
 	const found: string[] = [];
 	const visit = (node: unknown) => {
@@ -31,8 +31,8 @@ function directives(source: string) {
 	return found;
 }
 
-describe('07 Bewegung – CartList', () => {
-	it('rendert jede Position', () => {
+describe('07 Motion – CartList', () => {
+	it('renders every line item', () => {
 		const cart = new Cart();
 		cart.add(hammer);
 		cart.add(hammer);
@@ -42,7 +42,7 @@ describe('07 Bewegung – CartList', () => {
 		expect(body).toContain(`1 × ${schrauber.name}`);
 	});
 
-	it('nutzt einen keyed each-Block', () => {
+	it('uses a keyed each block', () => {
 		const ast = parse(cartListSource, { modern: true });
 		const blocks: AST.EachBlock[] = [];
 		const visit = (node: unknown) => {
@@ -55,19 +55,19 @@ describe('07 Bewegung – CartList', () => {
 		expect(blocks.some((block) => block.key)).toBe(true);
 	});
 
-	it('blendet ein, blendet aus und schiebt nach', () => {
+	it('fades in, fades out, and moves up', () => {
 		expect(directives(cartListSource)).toEqual(
 			expect.arrayContaining(['in:fly', 'out:fade', 'animate:flip'])
 		);
 	});
 
-	it('berücksichtigt reduzierte Bewegung', () => {
+	it('respects reduced motion', () => {
 		expect(code(cartListSource)).toContain('prefersReducedMotion.current');
 	});
 });
 
-describe('07 Bewegung – CartTotal', () => {
-	it('zeigt beim ersten Rendern die aktuelle Summe', () => {
+describe('07 Motion – CartTotal', () => {
+	it('shows the current total on first render', () => {
 		const cart = new Cart();
 		cart.add(hammer);
 		cart.add(schrauber);
@@ -75,7 +75,7 @@ describe('07 Bewegung – CartTotal', () => {
 		expect(body).toContain(`Summe: ${euro(hammer.priceCents + schrauber.priceCents)}`);
 	});
 
-	it('lässt die Summe mit Tween gleiten – mit Rücksicht', () => {
+	it('lets the total glide with Tween – with care', () => {
 		expect(code(cartTotalSource)).toMatch(/Tween\.of\(/);
 		expect(code(cartTotalSource)).toContain('prefersReducedMotion.current');
 	});

@@ -6,7 +6,7 @@ import { Catalog } from './loesung/catalog.svelte.js';
 
 const [hammer, schrauber] = sampleProducts;
 
-/** Führt `read` in einem Effekt aus und sammelt jedes Ergebnis. */
+/** Runs `read` in an effect and collects every result. */
 function track<T>(read: () => T) {
 	const seen: T[] = [];
 	const stop = $effect.root(() => {
@@ -18,8 +18,8 @@ function track<T>(read: () => T) {
 	return { seen, stop };
 }
 
-describe('02 Zustand – Cart', () => {
-	it('legt eine neue Position mit Menge 1 und Preis an', () => {
+describe('02 State – Cart', () => {
+	it('adds a new line item with quantity 1 and price', () => {
 		const cart = new Cart();
 		cart.add(hammer);
 		expect(cart.snapshot()).toEqual([
@@ -27,7 +27,7 @@ describe('02 Zustand – Cart', () => {
 		]);
 	});
 
-	it('erhöht die Menge, wenn das Produkt schon im Warenkorb liegt', () => {
+	it('increases the quantity if the product is already in the cart', () => {
 		const cart = new Cart();
 		cart.add(hammer);
 		cart.add(schrauber);
@@ -38,7 +38,7 @@ describe('02 Zustand – Cart', () => {
 		]);
 	});
 
-	it('meldet push als Änderung (Deep State)', () => {
+	it('reports push as a change (deep state)', () => {
 		const cart = new Cart();
 		const { seen, stop } = track(() => cart.items.length);
 		cart.add(hammer);
@@ -47,7 +47,7 @@ describe('02 Zustand – Cart', () => {
 		stop();
 	});
 
-	it('meldet auch quantity += 1 als Änderung', () => {
+	it('also reports quantity += 1 as a change', () => {
 		const cart = new Cart();
 		cart.add(hammer);
 		const { seen, stop } = track(() => cart.items[0]?.quantity);
@@ -57,7 +57,7 @@ describe('02 Zustand – Cart', () => {
 		stop();
 	});
 
-	it('liefert mit snapshot eine Kopie, die structuredClone verträgt', () => {
+	it('returns a copy via snapshot that structuredClone can handle', () => {
 		const cart = new Cart();
 		cart.add(hammer);
 		const copy = structuredClone(cart.snapshot());
@@ -65,8 +65,8 @@ describe('02 Zustand – Cart', () => {
 	});
 });
 
-describe('02 Zustand – Catalog mit $state.raw', () => {
-	it('reagiert auf das Ersetzen der Liste', () => {
+describe('02 State – Catalog with $state.raw', () => {
+	it('reacts when the list is replaced', () => {
 		const catalog = new Catalog();
 		const { seen, stop } = track(() => catalog.products.length);
 		catalog.replace(structuredClone(sampleProducts));
@@ -75,11 +75,11 @@ describe('02 Zustand – Catalog mit $state.raw', () => {
 		stop();
 	});
 
-	it('hüllt die Produkte nicht in einen Proxy', () => {
+	it('does not wrap the products in a proxy', () => {
 		const catalog = new Catalog();
 		catalog.replace(structuredClone(sampleProducts));
 		const { seen, stop } = track(() => catalog.products[0]?.stock);
-		catalog.products[0]!.stock = 0; // verändern statt ersetzen – bewusst ohne Wirkung
+		catalog.products[0]!.stock = 0; // mutate instead of replace – deliberately without effect
 		flushSync();
 		expect(seen).toEqual([hammer.stock]);
 		stop();

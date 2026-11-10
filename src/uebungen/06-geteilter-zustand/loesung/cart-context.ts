@@ -1,5 +1,5 @@
 import { createContext } from 'svelte';
 import type { Cart } from '#lib/cart.svelte.js';
 
-// Typisierter Context: `getCart` wirft, wenn kein Vorfahre `setCart` aufgerufen hat.
+// Typed Context: `getCart` throws if no ancestor has called `setCart`.
 export const [getCart, setCart] = createContext<Cart>();

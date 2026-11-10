@@ -2,9 +2,9 @@ import { totalCents, type OrderItem, type Product, type ProductId } from '#lib/s
 
 export class Cart {
 	items = $state<OrderItem[]>([]);
-	// TODO 1: Leite `total` mit `$derived` und `totalCents` ab.
+	// TODO 1: Derive `total` with `$derived` and `totalCents`.
 	total = 0;
-	// TODO 2: Leite `count` (Summe aller Mengen) mit `$derived` ab.
+	// TODO 2: Derive `count` (sum of all quantities) with `$derived`.
 	count = 0;
 
 	add(product: Product) {
@@ -14,7 +14,7 @@ export class Cart {
 	}
 
 	remove(productId: ProductId) {
-		// TODO 3: Entferne die Position mit dieser `productId`.
+		// TODO 3: Remove the line item with this `productId`.
 		void productId;
 	}
 

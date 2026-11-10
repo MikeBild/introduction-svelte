@@ -15,7 +15,7 @@ const setup = () => {
 	return { user, onorder, quantity, submit };
 };
 
-it('bestellt das gewählte Produkt in der eingegebenen Menge', async () => {
+it('orders the selected product in the entered quantity', async () => {
 	const { user, onorder, quantity, submit } = setup();
 
 	await user.selectOptions(screen.getByLabelText('Produkt'), 'Akkuschrauber');
@@ -29,7 +29,7 @@ it('bestellt das gewählte Produkt in der eingegebenen Menge', async () => {
 	});
 });
 
-it('zeigt eine ungültige Menge am Feld', async () => {
+it('shows an invalid quantity at the field', async () => {
 	const { user, onorder, quantity, submit } = setup();
 
 	await user.clear(quantity);
@@ -42,7 +42,7 @@ it('zeigt eine ungültige Menge am Feld', async () => {
 	expect(quantity.getAttribute('aria-describedby')).toBe(message.id);
 });
 
-it('meldet ein leeres Feld als Fehler', async () => {
+it('reports an empty field as an error', async () => {
 	const { user, onorder, quantity, submit } = setup();
 
 	await user.clear(quantity);

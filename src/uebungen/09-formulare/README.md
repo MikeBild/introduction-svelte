@@ -1,30 +1,32 @@
-# Übung 09 – Events und Formulare
+*English · [Deutsch](README.de.md)*
 
-**Workshop:** Lektion „Ein Formular, ein Schema, Fehler am Feld“ · **Folien:** Abschnitte „Props und Events“ und „Form Actions“ · **Schwierigkeit:** ★★★☆☆
+# Exercise 09 – Events and forms
 
-Du baust das Bestellformular im Browser. Es prüft die Eingaben mit demselben zod-Schema wie die Form Action auf dem Server und zeigt Fehler direkt am Feld.
+**Workshop:** lesson “One form, one schema, errors at the field” · **Slides:** sections “Props and events” and “Form Actions” · **Difficulty:** ★★★☆☆
 
-## Dateien
+You build the order form in the browser. It validates the input with the same zod schema as the Form Action on the server and shows errors right at the field.
 
-- `start/CheckoutForm.svelte` – hier arbeitest du
-- `start/field-errors.ts` – gegeben: macht aus zod-Issues Meldungen je Feld
-- Gegeben: `#lib/schema.ts` mit `PlaceOrderInput`
+## Files
 
-## Aufgaben
+- `start/CheckoutForm.svelte` – this is where you work
+- `start/field-errors.ts` – given: turns zod issues into messages per field
+- Given: `#lib/schema.ts` with `PlaceOrderInput`
 
-1. Verbinde `handleSubmit` per `onsubmit` mit dem Formular und verhindere mit `event.preventDefault()` das Neuladen der Seite.
-2. Prüfe die Eingaben mit `PlaceOrderInput.safeParse`. Bei Fehlern füllst du `errors`, sonst rufst du `onorder(result.data)` auf.
-3. Leite `quantityError` mit `$derived` aus `errors['items.0.quantity']` ab.
-4. Binde das Mengenfeld per `bind:value`. Bei einem Fehler setzt du `aria-invalid="true"` und verknüpfst die Meldung per `aria-describedby`.
+## Tasks
 
-## Prüfen
+1. Connect `handleSubmit` to the form with `onsubmit` and prevent the page reload with `event.preventDefault()`.
+2. Validate the input with `PlaceOrderInput.safeParse`. On errors, you fill `errors`, otherwise you call `onorder(result.data)`.
+3. Derive `quantityError` from `errors['items.0.quantity']` with `$derived`.
+4. Bind the quantity field with `bind:value`. On an error, you set `aria-invalid="true"` and link the message with `aria-describedby`.
+
+## Check
 
 ```bash
 npm run test:start -- 09
 ```
 
-## Zum Nachdenken
+## Think about it
 
-- `bind:value` an einem Feld mit `type="number"` liefert eine Zahl. Was steht in `quantity`, wenn das Feld leer ist?
-- Warum reicht die Prüfung im Browser nicht? Schau dir dazu die Form Action in Übung 08 an.
-- Wann validierst du beim Absenden und wann schon beim Verlassen eines Felds?
+- `bind:value` on a field with `type="number"` yields a number. What is in `quantity` when the field is empty?
+- Why is validation in the browser not enough? Look at the Form Action in exercise 08.
+- When do you validate on submit, and when already when the user leaves a field?

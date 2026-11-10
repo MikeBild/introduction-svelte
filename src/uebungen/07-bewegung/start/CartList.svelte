@@ -5,10 +5,10 @@
 	const cart = getCart();
 </script>
 
-<!-- TODO 1: Mache den each-Block keyed über `item.productId`.
-     TODO 2: Neue Positionen fliegen herein (`in:fly`), entfernte blenden aus (`out:fade`).
-     TODO 3: Die übrigen Positionen rücken weich nach (`animate:flip`).
-     TODO 4: Bei `prefersReducedMotion.current` (svelte/motion) ist die Dauer 0. -->
+<!-- TODO 1: Make the each block keyed by `item.productId`.
+     TODO 2: New line items fly in (`in:fly`), removed ones fade out (`out:fade`).
+     TODO 3: The remaining line items move up smoothly (`animate:flip`).
+     TODO 4: With `prefersReducedMotion.current` (svelte/motion), the duration is 0. -->
 <ul>
 	{#each cart.items as item}
 		<li>

@@ -1,40 +1,42 @@
-# Übung 11 – Build und Deployment
+*English · [Deutsch](README.de.md)*
 
-**Workshop:** Lektionen „Welcher Adapter bringt den Shop in Produktion?“ und „Drei Wege, SvelteKit auf AWS zu betreiben“ · **Schwierigkeit:** ★★★☆☆
+# Exercise 11 – Build and deployment
 
-`npm run build` erzeugt mit `@sveltejs/adapter-node` einen Node-Server in `build/`. Den startest du direkt mit `node build`. Brauchst du eigene Routen davor, etwa einen Health Check, hängst du den SvelteKit-Handler in Express 5 ein.
+**Workshop:** lessons “Which adapter takes the shop to production?” and “Three ways to run SvelteKit on AWS” · **Difficulty:** ★★★☆☆
 
-## Dateien
+`npm run build` uses `@sveltejs/adapter-node` to produce a Node server in `build/`. You start it directly with `node build`. If you need your own routes in front of it, such as a health check, you plug the SvelteKit handler into Express 5.
 
-- `start/app.ts` – hier arbeitest du: `createApp(handler)` baut die Express-App
-- `server.ts` im Wurzelverzeichnis – startet den echten Build mit `createApp` aus `loesung/`
-- `Dockerfile` – ein Container-Image für den Betrieb
-- `Dockerfile.lambda` – dasselbe Image als AWS-Lambda-Function, mit dem AWS Lambda Web Adapter
+## Files
 
-## Aufgaben
+- `start/app.ts` – this is where you work: `createApp(handler)` builds the Express app
+- `server.ts` in the root directory – starts the real build with `createApp` from `loesung/`
+- `Dockerfile` – a container image for running the app
+- `Dockerfile.lambda` – the same image as an AWS Lambda function, with the AWS Lambda Web Adapter
 
-1. Schalte den Header `X-Powered-By` ab.
-2. Beantworte `GET /healthz` mit `{ "ok": true }`.
-3. Reiche alle anderen Requests an den SvelteKit-Handler weiter.
+## Tasks
 
-## Prüfen
+1. Turn off the `X-Powered-By` header.
+2. Answer `GET /healthz` with `{ "ok": true }`.
+3. Pass all other requests on to the SvelteKit handler.
+
+## Check
 
 ```bash
 npm run test:start -- 11
 ```
 
-Dann mit dem echten Build:
+Then with the real build:
 
 ```bash
 npm run build
-npm run start:express        # http://localhost:3000 und /healthz
+npm run start:express        # http://localhost:3000 and /healthz
 ```
 
-## Origin hinter einem Proxy
+## Origin behind a proxy
 
-SvelteKit prüft bei Form Actions, ob der Request von derselben Origin kommt. Ohne weitere Angaben nimmt `adapter-node` `https` und den `Host`-Header an. Läuft die App hinter einem Load Balancer, setzt du `PROTOCOL_HEADER=x-forwarded-proto` und `HOST_HEADER=x-forwarded-host`. Kennst du die Adresse schon beim Build, trägst du sie in SvelteKit 3 als `paths.origin` im Vite-Plugin ein. Die Umgebungsvariable `ORIGIN` aus SvelteKit 2 gibt es nicht mehr.
+For Form Actions, SvelteKit checks whether the request comes from the same origin. Without further settings, `adapter-node` assumes `https` and the `Host` header. If the app runs behind a load balancer, you set `PROTOCOL_HEADER=x-forwarded-proto` and `HOST_HEADER=x-forwarded-host`. If you already know the address at build time, you enter it in SvelteKit 3 as `paths.origin` in the Vite plugin. The `ORIGIN` environment variable from SvelteKit 2 no longer exists.
 
-Lokal über `http://localhost` lehnt SvelteKit deshalb Form Actions mit 403 ab. Das Bestellformular probierst du lokal mit `npm run dev` oder `npm run preview` aus.
+That is why SvelteKit rejects Form Actions with 403 locally over `http://localhost`. You try out the order form locally with `npm run dev` or `npm run preview`.
 
 ## Container
 
@@ -43,18 +45,18 @@ docker build -f src/uebungen/11-deploy/Dockerfile -t werkstatt-shop .
 docker run -p 3000:3000 werkstatt-shop
 ```
 
-## Auf AWS Lambda
+## On AWS Lambda
 
-`Dockerfile.lambda` baut auf dem Image `werkstatt-shop` auf und ergänzt den [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter) als Extension. Er startet den Node-Server in der Lambda-Function und übersetzt jedes Lambda-Event in einen HTTP-Request. `/healthz` dient als Readiness Check.
+`Dockerfile.lambda` builds on the `werkstatt-shop` image and adds the [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter) as an extension. It starts the Node server in the Lambda function and translates every Lambda event into an HTTP request. `/healthz` serves as the readiness check.
 
 ```bash
 docker build -f src/uebungen/11-deploy/Dockerfile.lambda -t werkstatt-shop-lambda src/uebungen/11-deploy
 ```
 
-Das Image lädst du in Amazon ECR hoch und legst damit eine Lambda-Function an, etwa mit AWS CDK. Wie das geht, zeigt der Workshop [„AWS Serverless mit Lambda, CDK und DynamoDB“](https://workshops.mikebild.dev/w/aws-serverless/remote/).
+You push the image to Amazon ECR and create a Lambda function from it, for example with AWS CDK. The workshop [“AWS serverless with Lambda, CDK, and DynamoDB”](https://workshops.mikebild.dev/w/aws-serverless/remote/) shows how.
 
-## Zum Nachdenken
+## Think about it
 
-- Was gewinnst du mit Express vor dem Handler, und was kostet es dich gegenüber `node build`?
-- Welche Umgebungsvariablen braucht die App in der Produktion, und wo setzt du sie?
-- Wo liegt der Unterschied, wenn du statt `adapter-node` den `adapter-static` nimmst?
+- What do you gain with Express in front of the handler, and what does it cost you compared to `node build`?
+- Which environment variables does the app need in production, and where do you set them?
+- What is the difference if you use `adapter-static` instead of `adapter-node`?

@@ -4,7 +4,7 @@ import type { PlaceOrderInput } from '#lib/schema.js';
 import { sampleProducts } from '#lib/shop.js';
 import CheckoutForm from './loesung/CheckoutForm.svelte';
 
-describe('09 Formulare – CheckoutForm', () => {
+describe('09 Forms – CheckoutForm', () => {
 	let app: ReturnType<typeof mount> | undefined;
 	afterEach(() => {
 		if (app) unmount(app);
@@ -31,12 +31,12 @@ describe('09 Formulare – CheckoutForm', () => {
 		return { onorder, quantity, type, submit };
 	};
 
-	it('verhindert das Neuladen der Seite', () => {
+	it('prevents the page reload', () => {
 		const ui = setup();
 		expect(ui.submit().defaultPrevented).toBe(true);
 	});
 
-	it('meldet gültige Eingaben mit dem Schema-Typ', () => {
+	it('reports valid input with the schema type', () => {
 		const ui = setup();
 		ui.type('3');
 		ui.submit();
@@ -46,7 +46,7 @@ describe('09 Formulare – CheckoutForm', () => {
 		});
 	});
 
-	it('zeigt den Fehler am Feld und meldet nichts', () => {
+	it('shows the error at the field and reports nothing', () => {
 		const ui = setup();
 		ui.type('0');
 		ui.submit();
@@ -56,7 +56,7 @@ describe('09 Formulare – CheckoutForm', () => {
 		expect(document.getElementById('quantity-error')?.textContent).toBe('Gib eine ganze Zahl ab 1 ein.');
 	});
 
-	it('entfernt den Fehler nach einer gültigen Eingabe', () => {
+	it('removes the error after valid input', () => {
 		const ui = setup();
 		ui.type('0');
 		ui.submit();

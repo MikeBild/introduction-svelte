@@ -1,32 +1,34 @@
-# Übung 04 – Props und Events
+*English · [Deutsch](README.de.md)*
 
-**Folien:** Abschnitt „Props und Events“ · **Schwierigkeit:** ★★★☆☆
+# Exercise 04 – Props and events
 
-Du baust die Produktkarte, ein Mengenfeld mit Zwei-Wege-Bindung und die Produktsuche, die beides zusammenführt.
+**Slides:** section “Props and events” · **Difficulty:** ★★★☆☆
 
-## Dateien
+You build the product card, a quantity field with two-way binding, and the product search that brings both together.
 
-- `start/ProductCard.svelte` – Props, Callback-Prop `onadd`, `children`
+## Files
+
+- `start/ProductCard.svelte` – props, callback prop `onadd`, `children`
 - `start/QuantityInput.svelte` – `$bindable`
-- `start/ProductSearch.svelte` – Bindings und `$derived.by`
-- `QuantityHarness.svelte` – Testhilfe, bitte nicht ändern
+- `start/ProductSearch.svelte` – bindings and `$derived.by`
+- `QuantityHarness.svelte` – test helper, please do not change it
 
-## Aufgaben
+## Tasks
 
-1. `ProductCard`: Lies `product`, `onadd` und `children` mit `$props()`.
-2. Rendere `children` mit `{@render children?.()}`.
-3. Der Button ruft `onadd(product)` und ist bei Bestand 0 deaktiviert.
-4. `QuantityInput`: Binde das Feld per `bind:value`, damit der Aufrufer die Menge sieht.
-5. `ProductSearch`: Filtere mit `$derived.by` wie in Übung 03.
-6. Verbinde Suchfeld und Checkbox per `bind:value` bzw. `bind:checked`. Zeig bei ausverkauften Produkten „Ausverkauft“ als `children` der Karte.
+1. `ProductCard`: Read `product`, `onadd`, and `children` with `$props()`.
+2. Render `children` with `{@render children?.()}`.
+3. The button calls `onadd(product)` and is disabled when stock is 0.
+4. `QuantityInput`: Bind the field with `bind:value` so the caller sees the quantity.
+5. `ProductSearch`: Filter with `$derived.by` as in exercise 03.
+6. Connect the search field and the checkbox with `bind:value` and `bind:checked`. For sold-out products, show “Ausverkauft” (sold out) as the card’s `children`.
 
-## Prüfen
+## Check
 
 ```bash
 npm run test:start -- 04
 ```
 
-## Zum Nachdenken
+## Think about it
 
-- Was meldet `npm run check`, wenn du in `QuantityHarness.svelte` an eine Prop ohne `$bindable` bindest?
-- Callback-Props statt `createEventDispatcher`: Was gewinnst du bei den Typen?
+- What does `npm run check` report if you bind to a prop without `$bindable` in `QuantityHarness.svelte`?
+- Callback props instead of `createEventDispatcher`: What do you gain for the types?

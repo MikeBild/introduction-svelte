@@ -1,36 +1,36 @@
-// Load-Funktionen und Form Action für die Routen unter src/routes.
-// Die Routen-Dateien (+page.server.ts) rufen diese Funktionen nur auf.
+// Load functions and Form Action for the routes under src/routes.
+// The route files (+page.server.ts) only call these functions.
 import { fail } from '@sveltejs/kit';
 import { db } from '#lib/server/db.js';
 import type { Order, Product } from '#lib/shop.js';
 
-/** load für /products */
+/** load for /products */
 export async function loadProducts(): Promise<{ products: Product[] }> {
-	// TODO 1: Liefere alle Produkte aus `db.products()`.
+	// TODO 1: Return all products from `db.products()`.
 	return { products: [] };
 }
 
-/** load für /orders */
+/** load for /orders */
 export async function loadOrders(): Promise<{ orders: Order[]; products: Product[] }> {
 	return { orders: await db.orders(), products: await db.products() };
 }
 
-/** load für /orders/[id] – unbekannte IDs werden zu 404 */
+/** load for /orders/[id] – unknown IDs become 404 */
 export async function loadOrder({ params }: { params: { id: string } }): Promise<{ order: Order }> {
-	// TODO 2: Lies die Bestellung mit `db.order(params.id)`.
-	//         Gibt es sie nicht: `error(404, 'Diese Bestellung gibt es nicht. Wähle eine aus der Bestellliste.')` aus '@sveltejs/kit'.
+	// TODO 2: Read the order with `db.order(params.id)`.
+	//         If it does not exist: `error(404, 'Diese Bestellung gibt es nicht. Wähle eine aus der Bestellliste.')` from '@sveltejs/kit'.
 	void params;
 	throw new Error('loadOrder ist noch nicht umgesetzt');
 }
 
-/** Form Action „bestellen“ für /orders */
+/** Form Action “order” for /orders */
 export async function placeOrder({ request }: { request: Request }) {
-	// TODO 3: Lies die Formulardaten und prüfe sie mit `PlaceOrderInput` aus '#lib/schema.js'
-	//         (Felder: customerId, productId, quantity – die Menge als Zahl).
-	//         Ungültig → `fail(400, { error: 'Wähle ein Produkt und eine Menge ab 1.' })`.
-	// TODO 4: Lege die Bestellung mit `db.placeOrder(...)` an.
-	//         Ergebnis `null` → `fail(409, { error: 'Zu wenig auf Lager. Wähle eine kleinere Menge oder ein anderes Produkt.' })`.
-	// TODO 5: Erfolg → `redirect(303, `/orders/${order.id}`)`.
+	// TODO 3: Read the form data and validate it with `PlaceOrderInput` from '#lib/schema.js'
+	//         (fields: customerId, productId, quantity – the quantity as a number).
+	//         Invalid → `fail(400, { error: 'Wähle ein Produkt und eine Menge ab 1.' })`.
+	// TODO 4: Create the order with `db.placeOrder(...)`.
+	//         Result `null` → `fail(409, { error: 'Zu wenig auf Lager. Wähle eine kleinere Menge oder ein anderes Produkt.' })`.
+	// TODO 5: Success → `redirect(303, `/orders/${order.id}`)`.
 	void request;
 	return fail(501, { error: 'placeOrder ist noch nicht umgesetzt. Bearbeite TODO 3 bis 5 in orders.server.ts.' });
 }

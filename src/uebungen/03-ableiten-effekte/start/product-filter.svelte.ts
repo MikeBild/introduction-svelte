@@ -4,9 +4,9 @@ export class ProductFilter {
 	query = $state('');
 	onlyInStock = $state(false);
 
-	// TODO 4: Berechne mit `$derived.by` alle Produkte, deren Name `query` enthält
-	//         (ohne Groß-/Kleinschreibung, Leerzeichen am Rand ignorieren).
-	//         Ist `onlyInStock` gesetzt, bleiben nur Produkte mit Bestand > 0.
+	// TODO 4: Use `$derived.by` to compute all products whose name contains `query`
+	//         (case-insensitive, ignore leading and trailing spaces).
+	//         If `onlyInStock` is set, only products with stock > 0 remain.
 	visible: Product[] = [];
 
 	#products: () => Product[];

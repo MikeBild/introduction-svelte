@@ -6,7 +6,7 @@
 	type Props = { products: Product[]; onorder: (input: PlaceOrderInput) => void };
 	let { products, onorder }: Props = $props();
 
-	// Ohne Startwert übernimmt bind:value die erste Option der Liste.
+	// Without an initial value, bind:value takes the first option of the list.
 	let productId = $state<string>();
 	let quantity = $state<number | null>(1);
 	let errors = $state<Record<string, string>>({});

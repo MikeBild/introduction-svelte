@@ -4,7 +4,7 @@ import type { RequestHandler } from 'express';
 import { afterEach, describe, expect, it } from 'vitest';
 import { createApp } from './loesung/app.js';
 
-// Ersatz für `build/handler.js`: antwortet wie SvelteKit auf jede Seite.
+// Stand-in for `build/handler.js`: answers every page like SvelteKit does.
 const fakeSvelteKit: RequestHandler = (req, res) => {
 	res.type('html').send(`<h1>SvelteKit: ${req.path}</h1>`);
 };
@@ -19,22 +19,22 @@ const start = async () => {
 	return (path: string) => fetch(`http://127.0.0.1:${port}${path}`);
 };
 
-describe('11 Deploy – Express vor SvelteKit', () => {
-	it('beantwortet den Health Check selbst', async () => {
+describe('11 Deploy – Express in front of SvelteKit', () => {
+	it('answers the health check itself', async () => {
 		const get = await start();
 		const response = await get('/healthz');
 		expect(response.status).toBe(200);
 		expect(await response.json()).toEqual({ ok: true });
 	});
 
-	it('reicht Seiten an SvelteKit weiter', async () => {
+	it('passes pages on to SvelteKit', async () => {
 		const get = await start();
 		const response = await get('/products');
 		expect(response.status).toBe(200);
 		expect(await response.text()).toBe('<h1>SvelteKit: /products</h1>');
 	});
 
-	it('verrät nicht, dass Express läuft', async () => {
+	it('does not reveal that Express is running', async () => {
 		const get = await start();
 		const response = await get('/healthz');
 		expect(response.headers.get('x-powered-by')).toBeNull();

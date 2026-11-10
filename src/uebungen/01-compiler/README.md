@@ -1,27 +1,29 @@
-# Übung 01 – Der Compiler: eine erste Komponente
+*English · [Deutsch](README.de.md)*
 
-**Folien:** Abschnitt „Der Compiler“ · **Schwierigkeit:** ★☆☆☆☆
+# Exercise 01 – The compiler: a first component
 
-Du baust einen Mengen-Stepper für ein Produkt zu 49,90 €. Ziel ist der erste Kontakt mit Runes und Event-Attributen.
+**Slides:** section “The compiler” · **Difficulty:** ★☆☆☆☆
 
-## Dateien
+You build a quantity stepper for a product priced at €49.90. The goal is your first contact with runes and event attributes.
 
-- `start/Stepper.svelte` – hier arbeitest du
-- `loesung/Stepper.svelte` – zum Vergleichen, wenn du fertig bist
+## Files
 
-## Aufgaben
+- `start/Stepper.svelte` – this is where you work
+- `loesung/Stepper.svelte` – for comparison when you are done
 
-1. Mache `quantity` mit `$state(1)` reaktiv.
-2. Leite `total` mit `$derived` aus Menge und Preis ab.
-3. Verbinde die Buttons mit `onclick`: „+“ erhöht, „−“ verringert die Menge. Bei Menge 1 ist „−“ deaktiviert.
+## Tasks
 
-## Prüfen
+1. Make `quantity` reactive with `$state(1)`.
+2. Derive `total` from quantity and price with `$derived`.
+3. Connect the buttons with `onclick`: “+” increases, “−” decreases the quantity. At quantity 1, “−” is disabled.
+
+## Check
 
 ```bash
 npm run test:start -- 01
 ```
 
-## Zum Nachdenken
+## Think about it
 
-- Was erzeugt der Compiler aus deiner Datei? Probier es im [Playground](https://svelte.dev/playground) unter „JS output“ aus.
-- Was passiert, wenn du `$state` weglässt, aber `let` verwendest? Was meldet `npm run check`?
+- What does the compiler generate from your file? Try it in the [Playground](https://svelte.dev/playground) under “JS output”.
+- What happens if you leave out `$state` but use `let`? What does `npm run check` report?

@@ -1,5 +1,5 @@
-// Startet den Build hinter Express 5: erst `npm run build`, dann `npm run start:express`.
-// Node.js 26 führt TypeScript direkt aus (Type Stripping), ein Build-Schritt für diese Datei entfällt.
+// Runs the build behind Express 5: first `npm run build`, then `npm run start:express`.
+// Node.js 26 runs TypeScript directly (type stripping), so this file needs no build step.
 import { handler } from './build/handler.js';
 import { createApp } from './src/uebungen/11-deploy/loesung/app.ts';
 

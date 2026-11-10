@@ -5,7 +5,7 @@
 	import { getCart } from '#lib/cart.svelte.js';
 
 	const cart = getCart();
-	// Die Summe gleitet zu ihrem neuen Wert – außer bei reduzierter Bewegung.
+	// The total glides to its new value – except with reduced motion.
 	const shown = Tween.of(() => cart.total, {
 		duration: () => (prefersReducedMotion.current ? 0 : 400),
 		easing: cubicOut

@@ -6,9 +6,9 @@
 	let { products }: Props = $props();
 </script>
 
-<!-- TODO 1: Lies auch `row` und `empty` aus den Props.
-     TODO 2: Rendere je Produkt `row(product)` in einer Zeile.
-     TODO 3: Ist die Liste leer, rendere `empty` (falls vorhanden) in einer Zelle. -->
+<!-- TODO 1: Also read `row` and `empty` from the props.
+     TODO 2: Render `row(product)` in a table row for each product.
+     TODO 3: If the list is empty, render `empty` (if present) in a cell. -->
 <table>
 	<tbody>
 		{#each products as product (product.id)}

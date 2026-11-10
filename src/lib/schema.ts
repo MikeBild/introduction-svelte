@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-// Dasselbe Schema nutzen Formular (Client) und Form Action (Server).
+// The form (client) and the Form Action (server) use the same schema.
 export const OrderItemInput = z.strictObject({
 	productId: z.string().min(1),
 	quantity: z.number().int().min(1)

@@ -1,30 +1,32 @@
-# Übung 03 – Ableiten und Effekte
+*English · [Deutsch](README.de.md)*
 
-**Folien:** Abschnitt „Ableiten und Effekte“ · **Schwierigkeit:** ★★☆☆☆
+# Exercise 03 – Deriving and effects
 
-Der Warenkorb bekommt Summe und Anzahl als abgeleitete Werte. Außerdem baust du eine Produktsuche mit `$derived.by` und einen ersten Effekt.
+**Slides:** section “Deriving and effects” · **Difficulty:** ★★☆☆☆
 
-## Dateien
+The cart gets total and count as derived values. You also build a product search with `$derived.by` and a first effect.
 
-- `start/cart.svelte.ts` – der `Cart` aus Übung 02, erweitert
-- `start/product-filter.svelte.ts` – Klasse `ProductFilter`
-- `start/CartTitle.svelte` – setzt den Titel des Browser-Tabs
+## Files
 
-## Aufgaben
+- `start/cart.svelte.ts` – the `Cart` from exercise 02, extended
+- `start/product-filter.svelte.ts` – class `ProductFilter`
+- `start/CartTitle.svelte` – sets the title of the browser tab
 
-1. `total` = Σ Menge × Preis. Nutze `$derived` und `totalCents` aus `#lib/shop.js`.
-2. `count` = Summe aller Mengen, ebenfalls mit `$derived`.
-3. `remove(productId)` entfernt eine Position. Du ersetzt dazu das Array mit `filter`.
-4. `ProductFilter.visible`: Nutze `$derived.by` und filtere nach `query` (ohne Groß-/Kleinschreibung, Leerzeichen am Rand ignorieren). Ist `onlyInStock` gesetzt, bleiben nur Produkte mit Bestand übrig.
-5. `CartTitle.svelte`: Setze mit `$effect` den Titel auf `Warenkorb (<Anzahl>)`.
+## Tasks
 
-## Prüfen
+1. `total` = Σ quantity × price. Use `$derived` and `totalCents` from `#lib/shop.js`.
+2. `count` = sum of all quantities, also with `$derived`.
+3. `remove(productId)` removes a line item. To do this, you replace the array using `filter`.
+4. `ProductFilter.visible`: Use `$derived.by` and filter by `query` (case-insensitive, ignore leading and trailing spaces). If `onlyInStock` is set, only products in stock remain.
+5. `CartTitle.svelte`: Use `$effect` to set the title to `Warenkorb (<Anzahl>)` (cart (count)).
+
+## Check
 
 ```bash
 npm run test:start -- 03
 ```
 
-## Zum Nachdenken
+## Think about it
 
-- Schreib `total` testweise als `$state` und halte es per `$effect` aktuell. Warum ist das schlechter? (Folie „Der häufigste Fehler mit `$effect`“)
-- Warum setzt `CartTitle` den Titel in einem Effekt und nicht direkt im Skript?
+- As an experiment, write `total` as `$state` and keep it up to date with `$effect`. Why is that worse? (slide “The most common mistake with `$effect`”)
+- Why does `CartTitle` set the title in an effect and not directly in the script?

@@ -1,30 +1,32 @@
-# Übung 02 – Runes: Zustand
+*English · [Deutsch](README.de.md)*
 
-**Folien:** Abschnitt „Runes: Zustand“ · **Schwierigkeit:** ★★☆☆☆
+# Exercise 02 – Runes: state
 
-Du baust den Kern des Warenkorbs als Klasse in einer `.svelte.ts`-Datei. Dazu kommt ein Produktkatalog, der nur als Ganzes ersetzt wird.
+**Slides:** section “Runes: state” · **Difficulty:** ★★☆☆☆
 
-## Dateien
+You build the core of the cart as a class in a `.svelte.ts` file. On top of that comes a product catalog that is only ever replaced as a whole.
 
-- `start/cart.svelte.ts` – Klasse `Cart`
-- `start/catalog.svelte.ts` – Klasse `Catalog`
+## Files
 
-## Aufgaben
+- `start/cart.svelte.ts` – class `Cart`
+- `start/catalog.svelte.ts` – class `Catalog`
 
-1. Mache `items` mit `$state<OrderItem[]>([])` reaktiv. Damit wird das Array zu **Deep State**.
-2. Setze `add(product)` um. Liegt das Produkt schon im Warenkorb, erhöhst du `quantity` um 1. Sonst fügst du mit `push` eine neue Position hinzu (Menge 1, Preis aus dem Produkt).
-3. `snapshot()` liefert mit `$state.snapshot` eine Kopie ohne Proxy.
-4. Im `Catalog` wird die Produktliste nur ersetzt, nie verändert. Entscheide dich zwischen `$state` und `$state.raw`.
+## Tasks
 
-## Prüfen
+1. Make `items` reactive with `$state<OrderItem[]>([])`. This turns the array into **deep state**.
+2. Implement `add(product)`. If the product is already in the cart, increase `quantity` by 1. Otherwise add a new line item with `push` (quantity 1, price from the product).
+3. `snapshot()` returns a copy without a proxy using `$state.snapshot`.
+4. In `Catalog`, the product list is only replaced, never mutated. Choose between `$state` and `$state.raw`.
+
+## Check
 
 ```bash
 npm run test:start -- 02
 ```
 
-Die Tests prüfen mit `$effect.root`, ob deine Änderungen wirklich als Update ankommen.
+The tests use `$effect.root` to check whether your changes really arrive as updates.
 
-## Zum Nachdenken
+## Think about it
 
-- Warum schlägt `structuredClone(cart.items)` fehl, `structuredClone(cart.snapshot())` aber nicht?
-- Was spart `$state.raw` bei einer Liste mit 10.000 Produkten?
+- Why does `structuredClone(cart.items)` fail, but `structuredClone(cart.snapshot())` does not?
+- What does `$state.raw` save with a list of 10,000 products?

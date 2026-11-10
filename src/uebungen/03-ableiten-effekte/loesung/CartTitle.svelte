@@ -3,7 +3,7 @@
 
 	let { cart }: { cart: Cart } = $props();
 
-	// Ein Side Effect nach außen: der Titel des Browser-Tabs.
+	// A side effect to the outside world: the title of the browser tab.
 	$effect(() => {
 		document.title = `Warenkorb (${cart.count})`;
 	});

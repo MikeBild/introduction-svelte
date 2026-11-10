@@ -1,4 +1,4 @@
-<!-- Svelte-4-Syntax: Diese Datei läuft im Legacy-Modus, bis du sie migrierst. -->
+<!-- Svelte 4 syntax: this file runs in non-runes mode until you migrate it. -->
 <svelte:options runes={false} />
 
 <script lang="ts">

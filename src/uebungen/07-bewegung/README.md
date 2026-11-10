@@ -1,29 +1,31 @@
-# Übung 07 – Bewegung
+*English · [Deutsch](README.de.md)*
 
-**Folien:** Abschnitt „Bewegung“ · **Schwierigkeit:** ★★★☆☆
+# Exercise 07 – Motion
 
-Positionen im Warenkorb erscheinen, verschwinden und rücken nach. Die Summe gleitet zu ihrem neuen Wert. Wer reduzierte Bewegung eingestellt hat, sieht keine Animation.
+**Slides:** section “Motion” · **Difficulty:** ★★★☆☆
 
-## Dateien
+Line items in the cart appear, disappear, and move up. The total glides to its new value. If you have turned on reduced motion, you see no animation.
 
-- `start/CartList.svelte` – Transitions und `animate:flip`
+## Files
+
+- `start/CartList.svelte` – transitions and `animate:flip`
 - `start/CartTotal.svelte` – `Tween.of`
-- `CartHarness.svelte` – Testhilfe
+- `CartHarness.svelte` – test helper
 
-## Aufgaben
+## Tasks
 
-1. Mach den `each`-Block keyed über `item.productId`.
-2. Neue Positionen fliegen mit `in:fly={{ y: -8 }}` herein, entfernte blenden mit `out:fade` aus.
-3. Die übrigen Positionen rücken mit `animate:flip` nach.
-4. Ist `prefersReducedMotion.current` (aus `svelte/motion`) gesetzt, ist die Dauer 0.
-5. `CartTotal`: Lass die Summe mit `Tween.of(() => cart.total, …)` gleiten (400 ms, `cubicOut`) und zeig `shown.current` an.
+1. Make the `each` block keyed by `item.productId`.
+2. New line items fly in with `in:fly={{ y: -8 }}`, removed ones fade out with `out:fade`.
+3. The remaining line items move up with `animate:flip`.
+4. If `prefersReducedMotion.current` (from `svelte/motion`) is set, the duration is 0.
+5. `CartTotal`: Let the total glide with `Tween.of(() => cart.total, …)` (400 ms, `cubicOut`) and show `shown.current`.
 
-## Prüfen
+## Check
 
 ```bash
 npm run test:start -- 07
 ```
 
-Bewegung lässt sich schlecht im Unit-Test beobachten. Die Tests rendern deshalb auf dem Server und prüfen zusätzlich mit `svelte/compiler` das Markup.
+Motion is hard to observe in a unit test. That is why the tests render on the server and also check the markup with `svelte/compiler`.
 
-**Am schönsten prüfst du im Browser:** `npm run dev`, dann Produkte in den Warenkorb legen und unter `/cart` entfernen. Um deine Version zu sehen, stell in `src/routes/cart/+page.svelte` die Importe von `loesung` auf `start` um.
+**The browser is the nicest place to check:** `npm run dev`, then add products to the cart and remove them under `/cart`. To see your version, switch the imports in `src/routes/cart/+page.svelte` from `loesung` to `start`.
