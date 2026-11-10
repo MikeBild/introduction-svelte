@@ -2,7 +2,7 @@
 	"name": "introduction-svelte",
 	"private": true,
 	"version": "2026.10.0",
-	"description": "Übungen zu Svelte 5 und SvelteKit 3 am Beispiel Werkstatt-Shop",
+	"description": "Exercises for Svelte 5 and SvelteKit 3 with the workshop shop as the example",
 	"type": "module",
 	"engines": {
 		"node": ">=26"
