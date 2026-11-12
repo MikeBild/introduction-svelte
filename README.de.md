@@ -143,7 +143,7 @@ Stand Oktober 2026: Svelte 5.57 (Runes, Snippets, Event-Attribute) · SvelteKit 
 
 - Workshop: [„Svelte 5 und SvelteKit mit TypeScript“](https://workshops.mikebild.dev/w/svelte/remote/)
 - Folien: [slides.mikebild.dev/introduction-svelte](https://slides.mikebild.dev/introduction-svelte.html)
-- PDF: [slides.mikebild.dev/introduction-svelte.pdf](https://slides.mikebild.dev/introduction-svelte.pdf)
+- PDF: [introduction-svelte.pdf](https://objects.upraft.mikebild.info/site-media/mikebild/decks/introduction-svelte/introduction-svelte.pdf)
 - Beiträge auf mikebild.dev:
   - [Svelte-Reaktivität: der Compiler statt Virtual DOM](https://www.mikebild.dev/de/blog/svelte-reaktivitaet-compiler-ohne-virtual-dom/)
   - [Svelte Stores: State außerhalb der Komponente](https://www.mikebild.dev/de/blog/svelte-stores-zustand-ausserhalb-der-komponente/)

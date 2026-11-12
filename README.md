@@ -141,14 +141,14 @@ As of October 2026: Svelte 5.57 (runes, snippets, event attributes) · SvelteKit
 
 ## Workshop and slides
 
-- Workshop: [“Svelte 5 and SvelteKit with TypeScript”](https://workshops.mikebild.dev/w/svelte/remote/)
-- Slides: [slides.mikebild.dev/introduction-svelte](https://slides.mikebild.dev/introduction-svelte.html)
-- PDF: [slides.mikebild.dev/introduction-svelte.pdf](https://slides.mikebild.dev/introduction-svelte.pdf)
-- Posts on mikebild.dev (German):
-  - [Svelte-Reaktivität: der Compiler statt Virtual DOM](https://www.mikebild.dev/de/blog/svelte-reaktivitaet-compiler-ohne-virtual-dom/)
-  - [Svelte Stores: State außerhalb der Komponente](https://www.mikebild.dev/de/blog/svelte-stores-zustand-ausserhalb-der-komponente/)
-  - [Motion, Transitions und Animationen in Svelte](https://www.mikebild.dev/de/blog/svelte-motion-transitions-animationen/)
-  - [Slots, Context und Web Components in Svelte](https://www.mikebild.dev/de/blog/svelte-slots-context-und-web-components/)
+- Workshop (held in German): [“Svelte 5 and SvelteKit with TypeScript”](https://workshops.mikebild.dev/w/svelte/remote/)
+- Slides: [slides.mikebild.dev/introduction-svelte.en](https://slides.mikebild.dev/introduction-svelte.en.html)
+- PDF: [introduction-svelte.en.pdf](https://objects.upraft.mikebild.info/site-media/mikebild/decks/introduction-svelte/introduction-svelte.en.pdf)
+- Posts on mikebild.dev:
+  - [Svelte Reactivity: The Compiler Instead of a Virtual DOM](https://www.mikebild.dev/en/blog/svelte-reactivity-the-compiler-instead-of-a-virtual-dom/)
+  - [Svelte Stores: State Outside the Component](https://www.mikebild.dev/en/blog/svelte-stores-state-outside-the-component/)
+  - [Motion, Transitions and Animations in Svelte](https://www.mikebild.dev/en/blog/motion-transitions-and-animations-in-svelte/)
+  - [Slots, Context and Web Components in Svelte](https://www.mikebild.dev/en/blog/slots-context-and-web-components-in-svelte/)
 
 ## Archive
 
